@@ -1,0 +1,32 @@
+# Overview
+
+A computer vision pipeline for generating high-quality annotations for table tennis matches.
+
+# Problem Statement
+
+Manual annotation of sports videos is time-consuming and expensive.
+
+# Objectives
+
+- Detect players
+- Detect rackets
+- Detect table
+- Track ball
+
+# Workflow
+
+Video → Frame Extraction → SAM Segmentation → XML Generation → Dataset Creation
+
+# Challenges
+
+Ball detection was difficult because of motion blur.
+
+# Results
+
+Successfully generated annotations for multiple matches.
+
+# Key Learnings
+
+- Segmentation pipelines
+- Dataset preparation
+- Docker deployment

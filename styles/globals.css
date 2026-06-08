@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --background: #020817;
+  --foreground: #f8fafc;
+
+  --card: rgba(15, 23, 42, 0.6);
+  --border: rgba(255, 255, 255, 0.08);
+
+  --primary: #3b82f6;
+}
+
+.light {
+  --background: #ffffff;
+  --foreground: #0f172a;
+
+  --card: rgba(255, 255, 255, 0.8);
+  --border: rgba(15, 23, 42, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+.container-custom {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.text-muted {
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 0.9rem 1.5rem;
+  border-radius: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  padding: 0.9rem 1.5rem;
+  border-radius: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.glass-card {
+  background: var(--card);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid var(--border);
+
+  border-radius: 1rem;
+}
+
+.shadow-glow {
+  box-shadow:
+    0 0 50px rgba(59,130,246,0.35);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}

@@ -1,0 +1,31 @@
+# Abstract
+
+Research summary.
+
+# Problem
+
+Research problem.
+
+# Methodology
+
+Approach used.
+
+# Dataset
+
+Dataset information.
+
+# Results
+
+Research findings.
+
+# Contributions
+
+Key contributions.
+
+# Publication Status
+
+Current publication status.
+
+# Future Work
+
+Future research directions.
