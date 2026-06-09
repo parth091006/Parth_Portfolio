@@ -10,6 +10,7 @@ import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
 
 import { inter } from "./fonts";
+import { PersonJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = siteMetadata;
 
@@ -38,6 +39,8 @@ export default function RootLayout({
           </div>
 
           <Analytics />
+          <PersonJsonLd />
+          <WebSiteJsonLd />
         </ThemeProvider>
       </body>
     </html>

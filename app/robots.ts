@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
     },
 
     sitemap:
-      "https://parth-portfolio.vercel.app/sitemap.xml"
+      "https://parth-portfolio-69ek.vercel.app/sitemap.xml"
   };
 }

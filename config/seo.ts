@@ -23,5 +23,5 @@ export const seoConfig = {
     "https://parth-portfolio-69ek.vercel.app",
 
   ogImage:
-    "/profile/profile-photo.jpg"
+    "https://parth-portfolio-69ek.vercel.app/og-image.png"
 };

@@ -1,14 +1,10 @@
-# Dependencies
-/node_modules
-
 # Next.js
-/.next/
-/out/
+.next/
+out/
+.vercel/
 
-# Production
-/build
-
-# Logs
+# Node
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -21,34 +17,44 @@ pnpm-debug.log*
 .env.test.local
 .env.production.local
 
-# Vercel
-.vercel
-
 # TypeScript
 *.tsbuildinfo
-next-env.d.ts
+
+# Logs
+logs
+*.log
 
 # OS Files
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# IDE
+# VS Code
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains
 .idea/
 
 # Cache
 .cache/
+.parcel-cache/
 .turbo/
 
-# Coverage
+# Testing
 coverage/
 
-# Temporary Files
-*.tmp
-*.temp
+# Temp Files
+tmp/
+temp/
 
-# Python (for AI/ML related scripts if added later)
+# Optional / Backups
+*.bak
+*.swp
+*.swo
+
+# Python (Optional, for local AI/ML development)
 __pycache__/
 *.pyc
 *.pyo
@@ -56,17 +62,10 @@ __pycache__/
 venv/
 .envrc
 
-# Jupyter
+# Jupyter Checkpoints
 .ipynb_checkpoints/
 
-# Uploads (Optional)
-# Uncomment if you don't want uploaded assets tracked
-# public/uploads/
-
-# Generated files
-*.log
-
-# Local database files
+# Local databases
 *.sqlite
 *.db
 

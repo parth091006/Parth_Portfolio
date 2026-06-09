@@ -47,9 +47,10 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/profile/profile-photo.jpg",
+        url: "https://parth-portfolio-69ek.vercel.app/og-image.png",
         width: 1200,
         height: 630,
+        alt: "Parth Bhirwandekar - AI • Computer Vision • Robotics Portfolio",
       },
     ],
   },
@@ -62,6 +63,6 @@ export const metadata: Metadata = {
     description:
       "Computer Vision, Robotics and AI Systems",
 
-    images: ["/profile/profile-photo.jpg"],
+    images: ["https://parth-portfolio-69ek.vercel.app/og-image.png"],
   },
 };

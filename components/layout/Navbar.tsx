@@ -24,6 +24,10 @@ export default function Navbar() {
             Research
           </Link>
 
+          <Link href="/certificates">
+            Certificates
+          </Link>
+
           <Link href="/blog">
             Blog
           </Link>
