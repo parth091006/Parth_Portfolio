@@ -1,42 +1,81 @@
 import { Metadata } from "next";
-import { siteConfig } from "./site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    "https://parth-portfolio.vercel.app"
+  ),
+
   title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`
+    default:
+      "Parth Bhirwandekar",
+
+    template:
+      "%s | Parth Bhirwandekar"
   },
 
-  description: siteConfig.description,
+  description:
+    "Computer Vision, Robotics and AI Systems Portfolio",
 
-  keywords: siteConfig.keywords,
+  keywords: [
+    "AI",
+    "Computer Vision",
+    "Robotics",
+    "ROS2",
+    "Machine Learning",
+    "Research"
+  ],
 
   authors: [
     {
-      name: siteConfig.author
+      name:
+        "Parth Bhirwandekar"
     }
   ],
 
-  creator: siteConfig.author,
+  creator:
+    "Parth Bhirwandekar",
 
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    title:
+      "Parth Bhirwandekar",
 
-    title: siteConfig.name,
+    description:
+      "Computer Vision, Robotics and AI Systems",
 
-    description: siteConfig.description,
+    url:
+      "https://parth-portfolio.vercel.app",
 
-    siteName: siteConfig.name,
+    siteName:
+      "Parth Portfolio",
 
-    url: siteConfig.url
+    locale:
+      "en_US",
+
+    type:
+      "website",
+
+    images: [
+      {
+        url:
+          "/profile/profile-photo.jpg",
+
+        width:
+          1200,
+
+        height:
+          630
+      }
+    ]
   },
 
   twitter: {
-    card: "summary_large_image",
+    card:
+      "summary_large_image",
 
-    title: siteConfig.name,
+    title:
+      "Parth Bhirwandekar",
 
-    description: siteConfig.description
+    description:
+      "Computer Vision, Robotics and AI Systems"
   }
 };

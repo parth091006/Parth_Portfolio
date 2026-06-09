@@ -7,6 +7,8 @@ import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
+import { Analytics } from "@vercel/analytics/react";
+
 import { inter } from "./fonts";
 
 export const metadata: Metadata = siteMetadata;
@@ -24,6 +26,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <div className="min-h-screen flex flex-col">
+
             <Navbar />
 
             <main className="flex-1">
@@ -31,7 +34,10 @@ export default function RootLayout({
             </main>
 
             <Footer />
+
           </div>
+
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

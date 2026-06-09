@@ -26,11 +26,11 @@ export default function Hero() {
               duration: 0.8,
             }}
           >
-            <div className="glass-card inline-flex px-4 py-2 mb-8">
-              Research Paper Accepted • Publication Pending
+            <div className="glass-card inline-flex px-4 py-2 mb-8 text-xl md:text-2xl font-bold leading-tight">
+              Parth Sachin Bhirwandekar
             </div>
 
-            <h1 className="text-6xl md:text-8xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-7xl font-bold leading-tight">
               Building
               <br />
               Intelligent
