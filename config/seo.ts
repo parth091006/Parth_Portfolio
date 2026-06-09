@@ -1,6 +1,5 @@
 export const seoConfig = {
-  title:
-    "Parth Bhirwandekar",
+  title: "Parth Bhirwandekar",
 
   description:
     "Computer Vision, Robotics and AI Systems Portfolio",
@@ -16,14 +15,12 @@ export const seoConfig = {
     "Parth Bhirwandekar"
   ],
 
-  creator:
-    "Parth Bhirwandekar",
+  creator: "Parth Bhirwandekar",
 
-  author:
-    "Parth Bhirwandekar",
+  author: "Parth Bhirwandekar",
 
   siteUrl:
-    "https://parth-portfolio.vercel.app",
+    "https://parth-portfolio-69ek.vercel.app",
 
   ogImage:
     "/profile/profile-photo.jpg"

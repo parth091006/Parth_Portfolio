@@ -8,7 +8,7 @@ export const siteConfig = {
     "Portfolio of Parth Bhirwandekar showcasing Artificial Intelligence, Computer Vision, Robotics, Research, and Intelligent Systems.",
 
   url:
-    "https://parth-portfolio.vercel.app",
+    "https://parth-portfolio-69ek.vercel.app",
 
   author:
     "Parth Bhirwandekar",
