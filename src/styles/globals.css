@@ -1,0 +1,302 @@
+@import "tailwindcss";
+
+/* ============================================================
+   BITCOIN DEFI DESIGN SYSTEM — PARTH BHIRWANDEKAR PORTFOLIO
+   ============================================================ */
+
+/* --- Design Tokens --- */
+:root {
+  --void: #030304;
+  --surface: #0F1115;
+  --foreground: #FFFFFF;
+  --muted: #94A3B8;
+  --border: #1E293B;
+
+  --bitcoin-orange: #F7931A;
+  --burnt-orange: #EA580C;
+  --digital-gold: #FFD600;
+
+  /* Font families */
+  --font-heading: var(--font-heading, "Space Grotesk", sans-serif);
+  --font-body: var(--font-body, "Inter", sans-serif);
+  --font-mono: var(--font-mono, "JetBrains Mono", monospace);
+}
+
+/* --- Base Reset --- */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--void);
+  color: var(--foreground);
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography Utilities --- */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* --- Layout --- */
+.container-custom {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* --- Text Utilities --- */
+.text-muted {
+  color: var(--muted);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #F7931A, #FFD600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bitcoin-orange);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: white;
+  background: linear-gradient(to right, #EA580C, #F7931A);
+  box-shadow: 0 0 20px -5px rgba(234, 88, 12, 0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px -5px rgba(247, 147, 26, 0.7);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: white;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(247, 147, 26, 0.6);
+  background: rgba(247, 147, 26, 0.08);
+  color: #F7931A;
+}
+
+/* --- Cards --- */
+.glass-card {
+  background: rgba(15, 17, 21, 0.8);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+}
+
+.crypto-card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.crypto-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(247, 147, 26, 0.4);
+  box-shadow: 0 0 30px -10px rgba(247, 147, 26, 0.25);
+}
+
+/* --- Glow Effects --- */
+.shadow-glow {
+  box-shadow: 0 0 50px rgba(247, 147, 26, 0.35);
+}
+
+.glow-orange {
+  box-shadow: 0 0 20px -5px rgba(234, 88, 12, 0.5);
+}
+
+/* --- Grid Pattern Background --- */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image:
+    linear-gradient(to right, rgba(30, 41, 59, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.5) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+/* --- Animations --- */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes float-delayed {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(247, 147, 26, 0.6);
+  }
+
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 20px rgba(247, 147, 26, 1);
+  }
+}
+
+@keyframes ping-custom {
+
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 6s ease-in-out infinite 2s;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 18s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-ping-custom {
+  animation: ping-custom 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* --- Focus States --- */
+*:focus-visible {
+  outline: 2px solid #F7931A;
+  outline-offset: 2px;
+}
+
+/* --- Selection --- */
+::selection {
+  background: rgba(247, 147, 26, 0.25);
+  color: white;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(247, 147, 26, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(247, 147, 26, 0.6);
+}

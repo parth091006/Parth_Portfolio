@@ -1,159 +1,149 @@
 parth-portfolio/
 │
-├── app/                                        # Contains all pages and routes of the portfolio using Next.js App Router.
-│   ├── page.tsx                                # The homepage of the portfolio.
-│   ├── layout.tsx                              # Defines the common layout for all pages (e.g., header, footer).
-│   ├── loading.tsx                             # Loading state component displayed during page transitions.
-│   ├── not-found.tsx                           # Custom 404 page for handling non-existent routes.
-│   │
-│   ├── about/                                  # About Me section with personal bio and background.
-│   │   └── page.tsx    
-│   │
-│   ├── projects/                               # Projects section showcasing case studies and details.
-│   │   ├── page.tsx                            # List of projects with summaries and links to detailed case studies.                     
-│   │   └── [slug]/                             # Dynamic route for individual project case studies based on slug.
-│   │       └── page.tsx            
-│   │
-│   ├── research/                               # Research section highlighting papers, abstracts, and summaries.
-│   │   └── page.tsx
-│   │
-│   ├── experience/                             # Work experience, internships, and research roles.
-│   │   └── page.tsx
-│   │
-│   ├── achievements/                           # Awards, recognitions, and milestones.
-│   │   └── page.tsx
-│   │
-│   ├── certificates/                           # Certifications page showing verified achievements.
-│   │   └── page.tsx
-│   │
-│   ├── blog/                                   # Blog section with articles, tutorials, and insights.    
-│   │   ├── page.tsx
-│   │   └── [slug]/                             # Dynamic route for individual blog posts based on slug.
-│   │       └── page.tsx
-│   │
-│   ├── gallery/                                # A gallery showcasing images, videos, and media related to projects and achievements.
-│   │   └── page.tsx
-│   │
-│   └── contact/                                # Contact page with a form and contact information.
-│       └── page.tsx
-│
-├── components/                                 # Reusable UI components.
-│   ├── layout/                                 # Contains website structure components.
-│   │   ├── Navbar.tsx                          # Top navigation bar.
-│   │   ├── Footer.tsx                          # Footer links and copyright.
-│   │   ├── ThemeToggle.tsx                     # Dark/Light mode switch.
-│   │   └── Container.tsx                       # Keeps consistent page width.
-│   │
-│   ├── sections/                               # Homepage sections.
-│   │   ├── Hero.tsx                            # Hero section with introduction and call-to-action.
-│   │   ├── AboutPreview.tsx                    # Brief about me section with a link to the full about page.
-│   │   ├── FeaturedProjects.tsx                # Highlights of key projects with links to case studies.
-│   │   ├── Skills.tsx                          # Overview of technical and soft skills with proficiency levels.
-│   │   ├── Experience.tsx                      # Summary of work experience and research roles.
-│   │   ├── ResearchHighlight.tsx               # Highlights of research papers and contributions.
-│   │   ├── ContactCTA.tsx                      # Call-to-action for contacting with a link to the contact page.
-│   │   └── GitHubSection.tsx                   # Renders GitHub Activity section with calendar and stats.
-│   │
-│   ├── cards/                                  # Reusable cards.
-│   │   ├── ProjectCard.tsx                     # Card component for displaying project summaries.
-│   │   ├── BlogCard.tsx                        # Card component for displaying blog post summaries.
-│   │   ├── ResearchCard.tsx                    # Card component for displaying research paper summaries.
-│   │   ├── AchievementCard.tsx                 # Card component for displaying awards and recognitions.
-│   │   └── CertificateCard.tsx                 # Card component for displaying certifications.
-│   │
-│   ├── github/                                 # GitHub activity and contribution graph components.
-│   │   └── GitHubActivity.tsx                  # Fetches and displays GitHub contribution statistics and recent repositories.
-│   │
-│   ├── seo/                                    # Search Engine Optimization components.
-│   │   └── JsonLd.tsx                          # Injects Person and WebSite JSON-LD structured schemas.
-│   │
-│   ├── project/                                # Project-specific components.
-│   │   ├── ProjectGallery.tsx                  # Gallery component for project-related images and media.
-│   │   ├── ProjectTechStack.tsx                # Component to display the technologies used in a project.
-│   │   ├── ProjectTimeline.tsx                 # Timeline component to showcase project milestones and development stages.
-│   │   └── ProjectMetrics.tsx                  # Component to display key metrics and outcomes of projects.
-│   │
-│   └── ui/                                     # Generic UI elements.
-│       ├── Button.tsx                          # Reusable button component.
-│       ├── Badge.tsx                           # Small badge component for labels and tags.
-│       ├── Input.tsx                           # Styled input field component for forms.
-│       ├── Search.tsx                          # Search bar component with auto-suggest functionality.
-│       └── Modal.tsx                           # Modal component for displaying content in a popup.
-│
-├── content/                                    # MDX data source for portfolio updates.
-│   ├── projects/                               # Stores project case studies.
-│   │   ├── table-tennis-annotation.mdx         # Case study for the Table Tennis Annotation project.
-│   │   ├── ai-receptionist.mdx                 # Case study for the AI Receptionist project.
-│   │   └── vu-campus-bot.mdx                   # Case study for the VU Campus Bot project.
-│   │
-│   ├── blog/                                   # Stores blog posts and articles.
-│   │   ├── ros2-learning-journey.mdx           # Blog post about learning ROS2.
-│   │   └── building-my-first-rag-system.mdx    # Blog post about building a Retrieval-Augmented Generation (RAG) system.
-│   │
-│   ├── research/                               # Stores research papers, abstracts, and summaries. 
-│   │   └── research-paper-1.mdx                # Case study for a research paper. 
-│   │
-│   └── achievements/                           # Stores awards, recognitions, and milestones.
-│       └── achievement-1.mdx                   # Case study for an achievement.
-│
-├── data/                                       # Structured information.
-│   ├── profile.ts                              # Contains personal details, bio, and contact info.
-│   ├── skills.ts                               # Lists technical and soft skills with proficiency levels.
-│   ├── experience.ts                           # Details of work experience, internships, and research roles.
-│   ├── navigation.ts                           # Defines website navigation structure and links.
-│   ├── social-links.ts                         # Contains URLs for social media profiles and contact methods.
-│   └── certificates.ts                         # Lists certifications with details and links.
-│
-├── lib/                                        # Utility functions and data processing logic. 
-│   ├── mdx.ts                                  # Functions to load and parse MDX content.
-│   ├── utils.ts                                # General utility functions.
-│   ├── constants.ts                            # Application-wide constants.
-│   ├── project-loader.ts                       # Logic to load and structure project data.
-│   ├── blog-loader.ts                          # Logic to load and structure blog post data.
-│   └── seo.ts                                  # Functions to generate SEO metadata.
-│
-├── hooks/                                      # Custom React hooks.
-│   ├── useTheme.ts                             # Manages theme state (light/dark mode).
-│   ├── useSearch.ts                            # Handles search functionality.
-│   └── useProjects.ts                          # Fetches and manages project data.
-│
 ├── public/                                     # Static assets like images, PDFs, and icons.
-│   ├── profile/                                # Personal photos and profile-related images.
-│   │   ├── profile-photo.jpg  
-│   │   └── hero-photo.jpg
-│   │
-│   ├── resume/                                 # Resume and CV files.
-│   │   └── Parth_Bhirwandekar_Resume.pdf
-│   │
-│   ├── projects/                               # Project-related images, diagrams, and media.
-│   │   ├── table-tennis/
-│   │   ├── ai-receptionist/
-│   │   └── vu-campus-bot/
-│   │
-│   ├── research/                               # Research papers, abstracts, and related media.
-│   │   └── paper-preview.pdf
-│   │
-│   ├── certificates/                           # Certification badges and related media.
-│   │   └── 19.png                              # Verified certificate image.
-│   │
-│   ├── achievements/                           # Images and media related to awards and recognitions.
+│   ├── assets/                                 # Consolidated assets directory.
+│   │   ├── profile_photo/                      # Personal photos and profile-related images.
+│   │   ├── resume/                             # Resume and CV files.
+│   │   ├── project_images/                     # Project-related images, diagrams, and media.
+│   │   ├── project_videos/                     # Project-related videos.
+│   │   ├── research_paper/                     # Research papers, abstracts, and related media.
+│   │   ├── certificates/                       # Certification badges and related media.
+│   │   │   └── 19.png                          # Verified certificate image.
+│   │   └── logos/                              # Various logos.
 │   │
 │   ├── favicon/                                # Favicon and icons for the website.
-│   │
 │   └── og-image.png                            # Custom Open Graph preview image for social sharing.
 │
-├── styles/                                     # Global styles.
-│   └── globals.css
-│
-├── types/                                      # TypeScript type definitions.
-│   ├── project.ts                              # Types for project data and props.
-│   ├── blog.ts                                 # Types for blog post data and props.
-│   ├── research.ts                             # Types for research paper data and props.
-│   └── profile.ts                              # Types for profile data and props.
-│
-├── config/                                     # Configuration files.
-│   ├── site.ts                                 # Site-wide settings.
-│   └── metadata.ts                             # SEO metadata configuration.
+├── src/                                        # Contains all application source code.
+│   ├── app/                                    # Contains all pages and routes of the portfolio using Next.js App Router.
+│   │   ├── page.tsx                            # The homepage of the portfolio.
+│   │   ├── layout.tsx                          # Defines the common layout for all pages (e.g., header, footer).
+│   │   ├── loading.tsx                         # Loading state component displayed during page transitions.
+│   │   ├── not-found.tsx                       # Custom 404 page for handling non-existent routes.
+│   │   │
+│   │   ├── about/                              # About Me section with personal bio and background.
+│   │   │   └── page.tsx    
+│   │   │
+│   │   ├── projects/                           # Projects section showcasing case studies and details.
+│   │   │   ├── page.tsx                        # List of projects with summaries and links to detailed case studies.                     
+│   │   │   └── [slug]/                         # Dynamic route for individual project case studies based on slug.
+│   │   │       └── page.tsx            
+│   │   │
+│   │   ├── research/                           # Research section highlighting papers, abstracts, and summaries.
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── experience/                         # Work experience, internships, and research roles.
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── achievements/                       # Awards, recognitions, and milestones.
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── certificates/                       # Certifications page showing verified achievements.
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── blog/                               # Blog section with articles, tutorials, and insights.    
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/                         # Dynamic route for individual blog posts based on slug.
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── gallery/                            # A gallery showcasing images, videos, and media related to projects and achievements.
+│   │   │   └── page.tsx
+│   │   │
+│   │   └── contact/                            # Contact page with a form and contact information.
+│   │       └── page.tsx
+│   │
+│   ├── components/                             # Reusable UI components.
+│   │   ├── layout/                             # Contains website structure components.
+│   │   │   ├── Navbar.tsx                      # Top navigation bar.
+│   │   │   ├── Footer.tsx                      # Footer links and copyright.
+│   │   │   ├── ThemeToggle.tsx                 # Dark/Light mode switch.
+│   │   │   └── Container.tsx                   # Keeps consistent page width.
+│   │   │
+│   │   ├── sections/                           # Homepage sections.
+│   │   │   ├── Hero.tsx                        # Hero section with introduction and call-to-action.
+│   │   │   ├── AboutPreview.tsx                # Brief about me section with a link to the full about page.
+│   │   │   ├── FeaturedProjects.tsx            # Highlights of key projects with links to case studies.
+│   │   │   ├── Skills.tsx                      # Overview of technical and soft skills with proficiency levels.
+│   │   │   ├── Experience.tsx                  # Summary of work experience and research roles.
+│   │   │   ├── ResearchHighlight.tsx           # Highlights of research papers and contributions.
+│   │   │   ├── ContactCTA.tsx                  # Call-to-action for contacting with a link to the contact page.
+│   │   │   └── GitHubSection.tsx               # Renders GitHub Activity section with calendar and stats.
+│   │   │
+│   │   ├── cards/                              # Reusable cards.
+│   │   │   ├── ProjectCard.tsx                 # Card component for displaying project summaries.
+│   │   │   ├── BlogCard.tsx                    # Card component for displaying blog post summaries.
+│   │   │   ├── ResearchCard.tsx                # Card component for displaying research paper summaries.
+│   │   │   ├── AchievementCard.tsx             # Card component for displaying awards and recognitions.
+│   │   │   └── CertificateCard.tsx             # Card component for displaying certifications.
+│   │   │
+│   │   ├── github/                             # GitHub activity and contribution graph components.
+│   │   │   └── GitHubActivity.tsx              # Fetches and displays GitHub contribution statistics and recent repositories.
+│   │   │
+│   │   ├── seo/                                # Search Engine Optimization components.
+│   │   │   └── JsonLd.tsx                      # Injects Person and WebSite JSON-LD structured schemas.
+│   │   │
+│   │   ├── project/                            # Project-specific components.
+│   │   │   ├── ProjectGallery.tsx              # Gallery component for project-related images and media.
+│   │   │   ├── ProjectTechStack.tsx            # Component to display the technologies used in a project.
+│   │   │   ├── ProjectTimeline.tsx             # Timeline component to showcase project milestones and development stages.
+│   │   │   └── ProjectMetrics.tsx              # Component to display key metrics and outcomes of projects.
+│   │   │
+│   │   └── ui/                                 # Generic UI elements.
+│   │       ├── Button.tsx                      # Reusable button component.
+│   │       ├── Badge.tsx                       # Small badge component for labels and tags.
+│   │       ├── Input.tsx                       # Styled input field component for forms.
+│   │       ├── Search.tsx                      # Search bar component with auto-suggest functionality.
+│   │       └── Modal.tsx                       # Modal component for displaying content in a popup.
+│   │
+│   ├── content/                                # MDX data source for portfolio updates.
+│   │   ├── project/                            # Stores project case studies.
+│   │   │   ├── table-tennis-annotation.mdx     # Case study for the Table Tennis Annotation project.
+│   │   │   ├── ai-receptionist.mdx             # Case study for the AI Receptionist project.
+│   │   │   └── vu-campus-bot.mdx               # Case study for the VU Campus Bot project.
+│   │   │
+│   │   ├── blog/                               # Stores blog posts and articles.
+│   │   │   ├── ros2-learning-journey.mdx       # Blog post about learning ROS2.
+│   │   │   └── building-my-first-rag-system.mdx# Blog post about building a Retrieval-Augmented Generation (RAG) system.
+│   │   │
+│   │   ├── research/                           # Stores research papers, abstracts, and summaries. 
+│   │   │   └── research-paper-1.mdx            # Case study for a research paper. 
+│   │   │
+│   │   └── achievements/                       # Stores awards, recognitions, and milestones.
+│   │       └── achievement-1.mdx               # Case study for an achievement.
+│   │
+│   ├── data/                                   # Structured information.
+│   │   ├── profile.ts                          # Contains personal details, bio, and contact info.
+│   │   ├── skills.ts                           # Lists technical and soft skills with proficiency levels.
+│   │   ├── experience.ts                       # Details of work experience, internships, and research roles.
+│   │   ├── navigation.ts                       # Defines website navigation structure and links.
+│   │   ├── social-links.ts                     # Contains URLs for social media profiles and contact methods.
+│   │   └── certificates.ts                     # Lists certifications with details and links.
+│   │
+│   ├── lib/                                    # Utility functions and data processing logic. 
+│   │   ├── mdx.ts                              # Functions to load and parse MDX content.
+│   │   ├── utils.ts                            # General utility functions.
+│   │   ├── constants.ts                        # Application-wide constants.
+│   │   ├── project-loader.ts                   # Logic to load and structure project data.
+│   │   ├── blog-loader.ts                      # Logic to load and structure blog post data.
+│   │   └── seo.ts                              # Functions to generate SEO metadata.
+│   │
+│   ├── hooks/                                  # Custom React hooks.
+│   │   ├── useTheme.ts                         # Manages theme state (light/dark mode).
+│   │   ├── useSearch.ts                        # Handles search functionality.
+│   │   └── useProjects.ts                      # Fetches and manages project data.
+│   │
+│   ├── styles/                                 # Global styles.
+│   │   └── globals.css
+│   │
+│   ├── types/                                  # TypeScript type definitions.
+│   │   ├── project.ts                          # Types for project data and props.
+│   │   ├── blog.ts                             # Types for blog post data and props.
+│   │   ├── research.ts                         # Types for research paper data and props.
+│   │   └── profile.ts                          # Types for profile data and props.
+│   │
+│   └── config/                                 # Configuration files.
+│       ├── site.ts                             # Site-wide settings.
+│       └── metadata.ts                         # SEO metadata configuration.
 │
 ├── .env.local                                  # Local environment variables.
 ├── .gitignore                                  # Git ignore definitions.
