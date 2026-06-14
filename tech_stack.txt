@@ -1,0 +1,38 @@
+================================================================================
+                           PROJECT TECH STACK OVERVIEW
+================================================================================
+
+[1] CORE ARCHITECTURE & LANGUAGES
+    ├── Next.js 15.3.3         (React Framework utilizing the new App Router)
+    ├── React 19.1.0           (Core UI Library)
+    ├── TypeScript 5.x         (Static Typing for enterprise scalability)
+    └── Node.js 22.x           (Runtime Environment)
+
+[2] STYLING & DESIGN SYSTEM
+    ├── Tailwind CSS 4.x       (Utility-first CSS Framework for rapid UI)
+    ├── CSS Variables          (Custom "Bitcoin DeFi" Design System tokens)
+    ├── Framer Motion 12.18.1  (Complex React animations and transitions)
+    ├── Lucide React 0.511.0   (Primary SVG Iconography)
+    └── React Icons 5.5.0      (Supplementary Icon Sets)
+
+[3] CONTENT MANAGEMENT & DATA
+    ├── MDX v3.1.0             (Markdown enriched with JSX components)
+    ├── next-mdx-remote 6.0    (Dynamic MDX rendering on server components)
+    ├── gray-matter 4.0        (Frontmatter parsing for metadata extraction)
+    └── reading-time           (Metrics generation for blog posts)
+
+[4] UTILITIES & HELPERS
+    ├── tailwind-merge 3.3     (Utility for merging Tailwind classes safely)
+    ├── clsx 2.1               (Utility for constructing className strings)
+    └── next-themes            (Dark/Light mode provider and toggling)
+
+[5] INTEGRATIONS & FEATURES
+    └── react-github-calendar  (Visualized GitHub activity heatmap)
+
+[6] DEPLOYMENT & ANALYTICS
+    ├── Vercel                 (Primary Hosting & CI/CD Pipeline)
+    ├── @vercel/analytics      (Real-time traffic and performance insights)
+    ├── ESLint 9.x             (Code linting and formatting)
+    └── Turbopack              (Incremental bundler optimized for Next.js)
+
+================================================================================

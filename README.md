@@ -1,310 +1,108 @@
-# Parth Bhirwandekar Portfolio
+# Parth Bhirwandekar — Portfolio 🚀
 
-A modern portfolio website built to showcase my work in Artificial Intelligence, Machine Learning, Computer Vision, Robotics, and Research.
+A modern, high-performance portfolio website built to showcase my work in Artificial Intelligence, Machine Learning, Computer Vision, Robotics, and Research. 
 
-The website serves as a central hub for my projects, technical experience, research publications, blog posts, achievements, and professional journey as an AIML student and aspiring AI/ML Engineer.
-
----
-
-## Live Website
-
-Portfolio URL:
-
-```text
-https://your-domain.com
-```
-
-GitHub Repository:
-
-```text
-https://github.com/parth091006/parth-portfolio
-```
+The website is designed with a custom **"Bitcoin DeFi"** aesthetic, featuring a dark void background (`#030304`), Bitcoin orange accents (`#F7931A`), digital gold gradients, and a monospace-heavy typography system for a highly technical, premium feel.
 
 ---
 
-## About
+## 🔗 Live Links
 
-This portfolio is designed to:
-
-* Showcase AI/ML projects
-* Present Computer Vision research and experiments
-* Highlight Robotics and ROS2-based systems
-* Document technical learnings through blogs
-* Provide recruiters and researchers with a structured overview of my work
+- **Portfolio URL**: [Coming Soon]
+- **GitHub Repository**: [https://github.com/parth091006/parth-portfolio](https://github.com/parth091006/parth-portfolio)
+- **LinkedIn**: [https://www.linkedin.com/in/parthbhirwandekar/](https://www.linkedin.com/in/parthbhirwandekar/)
 
 ---
 
-## Features
+## 🛠️ Tech Stack & Architecture
 
-### Core Features
-* Modern responsive design
-* Dark and Light mode
-* Project showcase
-* Research publication section
-* Blog system
-* Resume download
-* Contact form
-* GitHub integration
-* LinkedIn integration
-* Mobile-friendly layout
+This project is built using industry-standard tools and a professional **Domain-Driven `src/` architecture**.
 
-### Advanced Features
-* Interactive project pages
-* Project search and filtering
-* GitHub contribution statistics
-* Research paper display
-* Certificate gallery
-* Image and video galleries
-* SEO optimization
+- **Framework**: Next.js 15.3 (App Router)
+- **UI Library**: React 19.1
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4 + Custom CSS Variables
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Content Management**: MDX (`next-mdx-remote`, `gray-matter`)
 
 ---
 
-## Tech Stack
+## 📁 Project Structure
 
-### Frontend
-* Next.js 15
-* React
-* TypeScript
-* Tailwind CSS
-* Framer Motion
-
-### Content Management
-* MDX
-* Markdown
-
-### Deployment
-* Vercel
-
-### Development Tools
-* Git
-* GitHub
-* ESLint
-* Prettier
-
----
-
-## Project Structure
+The codebase strictly isolates application logic from configuration files by housing all code within the `src/` directory.
 
 ```text
 parth-portfolio/
 │
-├── app/
-├── components/
-├── content/
-├── data/
-├── hooks/
-├── lib/
-├── public/
-├── styles/
-├── types/
-├── config/
-└── README.md
-```
-
-### Folder Overview
-
-| Folder     | Purpose                                 |
-| ---------- | --------------------------------------- |
-| app        | Application routes and pages            |
-| components | Reusable UI components                  |
-| content    | Projects, blogs, research, achievements |
-| data       | Profile, skills, experience data        |
-| hooks      | Custom React hooks                      |
-| lib        | Utility functions and loaders           |
-| public     | Images, videos, resume, documents       |
-| styles     | Global styling                          |
-| types      | TypeScript interfaces                   |
-| config     | Site configuration and metadata         |
-
----
-
-## Content Management
-
-The portfolio is designed so that new content can be added without modifying page code.
-
-### Add a New Project
-
-Create:
-
-```text
-content/projects/project-name.mdx
-```
-
-Add project images:
-
-```text
-public/projects/project-name/
-```
-
-Commit and push changes.
-
-The website automatically displays the project.
-
----
-
-### Add a Blog Post
-
-Create:
-
-```text
-content/blog/post-name.mdx
-```
-
-The blog page updates automatically.
-
----
-
-### Add Research
-
-Create:
-
-```text
-content/research/research-name.mdx
-```
-
-The research section updates automatically.
-
----
-
-## Development Setup
-
-### Clone Repository
-
-```bash
-git clone https://github.com/parth091006/parth-portfolio.git
-```
-
-### Navigate to Project
-
-```bash
-cd parth-portfolio
-```
-
-### Install Dependencies
-
-```bash
-npm install
-```
-
-### Run Development Server
-
-```bash
-npm run dev
-```
-
-Open:
-
-```text
-http://localhost:3000
+├── public/                  # Static assets (images, PDFs, certificates)
+│   └── assets/              # Consolidated media files
+│
+├── src/                     # Application Source Code
+│   ├── app/                 # Next.js App Router (pages & layouts)
+│   ├── components/          # Reusable UI (Cards, Layouts, Sections)
+│   ├── config/              # Site-wide metadata and settings
+│   ├── content/             # MDX files (Case studies, Blogs)
+│   ├── data/                # Hardcoded datasets (Profile, Skills)
+│   ├── hooks/               # Custom React hooks
+│   ├── lib/                 # Utility functions and MDX parsers
+│   ├── styles/              # Global CSS and Design Tokens
+│   └── types/               # TypeScript interfaces
+│
+├── next.config.ts           # Next.js compiler configuration
+├── tailwind.config.ts       # Tailwind theme configuration
+├── package.json             # Dependencies
+└── tsconfig.json            # TypeScript rules & path aliases
 ```
 
 ---
 
-## Build for Production
+## 📝 Content Management (MDX)
+
+The portfolio is designed as a headless CMS. You do not need to modify React components to add new case studies or blogs.
+
+### Adding a New Project Case Study
+1. Create a new markdown file: `src/content/project/your-project.mdx`
+2. Add your rich text content (supports custom components like React code blocks and Mermaid diagrams).
+3. Ensure the `slug` in your `src/data/projects.ts` matches the `.mdx` filename.
+4. The application will automatically parse the MDX and render it using the dynamic `[slug]` route.
+
+---
+
+## 💻 Local Development
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/parth091006/parth-portfolio.git
+   cd parth-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server (Turbopack enabled):**
+   ```bash
+   npm run dev
+   ```
+
+4. **View the site:**
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🚀 Deployment
+
+This project is optimized for deployment on **Vercel**. 
+Pushing to the `main` branch on GitHub will automatically trigger a production build.
 
 ```bash
 npm run build
-```
-
----
-
-## Start Production Server
-
-```bash
 npm start
 ```
 
 ---
 
-## Deployment
-
-The project is deployed using Vercel.
-
-### Deployment Workflow
-
-1. Push changes to GitHub
-2. Vercel automatically detects updates
-3. Build process runs
-4. Website is updated automatically
-
----
-
-## Sections Included
-
-### Home
-
-Introduction and featured content.
-
-### About
-
-Background, interests, and career goals.
-
-### Projects
-
-Detailed project showcase.
-
-### Experience
-
-Internships and professional experience.
-
-### Research
-
-Published and ongoing research.
-
-### Skills
-
-Technical skills and technologies.
-
-### Blog
-
-Technical articles and learning experiences.
-
-### Achievements
-
-Awards, certifications, and milestones.
-
-### Gallery
-
-Project images and demonstrations.
-
-### Contact
-
-Professional contact information.
-
----
-
-## Future Roadmap
-
-Planned improvements:
-
-* Interactive project demos
-* Research publication dashboard
-* Project timeline visualization
-* Performance monitoring
-
----
-
-## Author
-
-Parth Bhirwandekar
-
-AIML Student
-
-Interested in:
-
-* Artificial Intelligence
-* Machine Learning
-* Computer Vision
-* Robotics
-* Research Engineering
-
-GitHub:
-https://github.com/parth091006
-
-LinkedIn:
-https://www.linkedin.com/in/parthbhirwandekar/
-
----
-
-## License
+## 📄 License
 This project is licensed under the MIT License.
