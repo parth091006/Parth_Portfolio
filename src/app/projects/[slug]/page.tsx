@@ -37,21 +37,21 @@ export default async function ProjectPage({
     content = `## Overview\n\n${project.description}`;
   }
 
-  // Custom MDX components to match the Bitcoin DeFi aesthetic
+  // Custom MDX components to match the Neural Cyan aesthetic
   const components = {
-    h1: (props: any) => <h1 className="font-heading font-bold text-3xl text-white mt-12 mb-6" {...props} />,
-    h2: (props: any) => <h2 className="font-heading font-semibold text-2xl text-[#F7931A] mt-10 mb-4" {...props} />,
-    h3: (props: any) => <h3 className="font-heading font-medium text-xl text-white mt-8 mb-3" {...props} />,
-    p: (props: any) => <p className="font-body text-[#94A3B8] leading-relaxed mb-6 text-lg" {...props} />,
-    ul: (props: any) => <ul className="list-disc list-outside pl-6 space-y-2 mb-6 text-[#94A3B8] text-lg marker:text-[#F7931A]" {...props} />,
+    h1: (props: any) => <h1 className="font-heading font-bold text-3xl text-[#E2F4FF] mt-12 mb-6" {...props} />,
+    h2: (props: any) => <h2 className="font-heading font-semibold text-2xl text-[#00D4FF] mt-10 mb-4" {...props} />,
+    h3: (props: any) => <h3 className="font-heading font-medium text-xl text-[#E2F4FF] mt-8 mb-3" {...props} />,
+    p: (props: any) => <p className="font-body text-[#5B7A91] leading-relaxed mb-6 text-lg" {...props} />,
+    ul: (props: any) => <ul className="list-disc list-outside pl-6 space-y-2 mb-6 text-[#5B7A91] text-lg marker:text-[#00D4FF]" {...props} />,
     li: (props: any) => <li className="font-body leading-relaxed" {...props} />,
-    strong: (props: any) => <strong className="font-semibold text-white" {...props} />,
+    strong: (props: any) => <strong className="font-semibold text-[#E2F4FF]" {...props} />,
     pre: (props: any) => (
-      <div className="my-8 rounded-xl overflow-hidden border border-white/10 bg-[#0F1115] p-4">
+      <div className="my-8 rounded-xl overflow-hidden border border-[#00D4FF]/10 bg-[#102034] p-4">
         <pre className="overflow-x-auto" {...props} />
       </div>
     ),
-    code: (props: any) => <code className="font-mono text-sm text-[#FFD600]" {...props} />,
+    code: (props: any) => <code className="font-mono text-sm text-[#7B2FFF]" {...props} />,
   };
 
   return (
@@ -63,11 +63,16 @@ export default async function ProjectPage({
         technologies={project.technologies}
       />
 
-      <section className="bg-[#0F1115] pt-16 pb-32">
+      <section className="bg-[#0D1B2E] pt-16 pb-32">
         <div className="container-custom max-w-4xl mx-auto">
           <article className="crypto-card p-8 md:p-12 lg:p-16 relative overflow-hidden">
             {/* Top accent */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#EA580C] via-[#F7931A] to-[#FFD600]" />
+            <div
+              className="absolute top-0 left-0 right-0 h-1"
+              style={{
+                background: "linear-gradient(to right, #00D4FF, #7B2FFF)",
+              }}
+            />
 
             <MDXRemote source={content} components={components} />
 
