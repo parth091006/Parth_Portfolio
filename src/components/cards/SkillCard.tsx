@@ -1,9 +1,9 @@
-import { Video as LucideIcon } from "lucide-react";
+import { ElementType } from "react";
 
 interface SkillCardProps {
   title: string;
   skills: string[];
-  icon: LucideIcon;
+  icon: ElementType;
 }
 
 export default function SkillCard({ title, skills, icon: Icon }: SkillCardProps) {
