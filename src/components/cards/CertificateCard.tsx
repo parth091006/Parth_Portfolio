@@ -13,7 +13,7 @@ export default function CertificateCard({ certificate, onClick }: CertificateCar
       onClick={() => onClick(certificate)}
       className="crypto-card overflow-hidden h-full flex flex-col hover:scale-[1.02] transition-all duration-300 cursor-pointer group"
     >
-      <div className="relative h-56 w-full bg-[#0F1115] border-b border-white/10 p-4">
+      <div className="relative h-56 w-full bg-[#102034] border-b border-[#00D4FF]/10 p-4">
         <Image
           src={certificate.image}
           alt={certificate.title}
@@ -23,41 +23,41 @@ export default function CertificateCard({ certificate, onClick }: CertificateCar
         />
       </div>
 
-      <div className="p-6 flex-1 flex flex-col bg-[#030304]">
+      <div className="p-6 flex-1 flex flex-col bg-[#0D1B2E]">
         <div className="flex justify-between items-start mb-4 gap-2">
-          <span className="font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded-full border border-[#F7931A]/30 bg-[#F7931A]/5 text-[#F7931A] font-medium">
+          <span className="font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/5 text-[#00D4FF] font-medium">
             {certificate.category}
           </span>
-          <span className="font-mono text-xs text-[#94A3B8] font-medium whitespace-nowrap pt-1">
+          <span className="font-mono text-xs text-[#5B7A91] font-medium whitespace-nowrap pt-1">
             {certificate.issueDate}
           </span>
         </div>
 
-        <h3 className="font-heading text-lg font-bold mb-2 line-clamp-2 group-hover:text-[#F7931A] transition-colors duration-200 text-white">
+        <h3 className="font-heading text-lg font-bold mb-2 line-clamp-2 group-hover:text-[#00D4FF] transition-colors duration-200 text-[#E2F4FF]">
           {certificate.title}
         </h3>
 
-        <p className="font-body text-sm text-[#94A3B8] mb-4">
-          Issued by <span className="text-white font-medium">{certificate.issuer}</span>
+        <p className="font-body text-sm text-[#5B7A91] mb-4">
+          Issued by <span className="text-[#E2F4FF] font-medium">{certificate.issuer}</span>
         </p>
 
         {certificate.credentialId && (
-          <p className="text-xs text-[#94A3B8]/60 mb-4 font-mono truncate">
+          <p className="text-xs text-[#5B7A91]/60 mb-4 font-mono truncate">
             ID: {certificate.credentialId}
           </p>
         )}
 
-        <div className="mt-auto pt-4 border-t border-white/5 flex flex-wrap gap-1.5">
+        <div className="mt-auto pt-4 border-t border-[#00D4FF]/5 flex flex-wrap gap-1.5">
           {certificate.skills.slice(0, 3).map((skill) => (
             <span
               key={skill}
-              className="border border-white/10 bg-[#0F1115] rounded-full px-2.5 py-0.5 font-mono text-[10px] text-[#94A3B8]"
+              className="border border-[#00D4FF]/10 bg-[#102034] rounded-full px-2.5 py-0.5 font-mono text-[10px] text-[#5B7A91]"
             >
               {skill}
             </span>
           ))}
           {certificate.skills.length > 3 && (
-            <span className="font-mono text-[10px] text-[#F7931A] self-center pl-1 font-medium">
+            <span className="font-mono text-[10px] text-[#00D4FF] self-center pl-1 font-medium">
               +{certificate.skills.length - 3} more
             </span>
           )}

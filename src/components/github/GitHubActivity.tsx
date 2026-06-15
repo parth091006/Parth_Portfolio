@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Github, Star, Users, BookOpen, ArrowUpRight, GitFork, Loader2 } from "lucide-react";
-import Image from "next/image";
+import { Github, Star, Users, BookOpen, ArrowUpRight, GitFork, Loader as Loader2 } from "lucide-react";
 
 interface GithubUserData {
   public_repos: number;
@@ -141,7 +140,7 @@ export default function GitHubActivity() {
     return (
       <div className="space-y-8 animate-pulse">
         {/* Title skeleton */}
-        <div className="h-8 bg-white/5 rounded-lg w-1/3 mb-4" />
+        <div className="h-8 bg-[#00D4FF]/5 rounded-lg w-1/3 mb-4" />
 
         {/* Stats grid skeleton */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -152,11 +151,11 @@ export default function GitHubActivity() {
 
         {/* Calendar skeleton */}
         <div className="glass-card p-6 h-48 flex items-center justify-center">
-          <Loader2 className="h-8 w-8 text-[#F7931A] animate-spin" />
+          <Loader2 className="h-8 w-8 text-[#00D4FF] animate-spin" />
         </div>
 
         {/* Recent repos title skeleton */}
-        <div className="h-6 bg-white/5 rounded-lg w-1/4" />
+        <div className="h-6 bg-[#00D4FF]/5 rounded-lg w-1/4" />
 
         {/* Repos grid skeleton */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -172,15 +171,15 @@ export default function GitHubActivity() {
     <div className="space-y-10">
       {/* Title */}
       <div>
-        <p className="section-label mb-3">// GITHUB</p>
+        <p className="section-label-bracket mb-3">07 / GITHUB</p>
         <div className="flex items-center gap-3">
-          <Github className="h-8 w-8 text-[#F7931A]" />
-          <h2 className="font-heading font-bold text-2xl md:text-3xl">
+          <Github className="h-8 w-8 text-[#00D4FF]" />
+          <h2 className="font-heading font-bold text-2xl md:text-3xl text-[#E2F4FF]">
             GitHub Activity &amp;{" "}
             <span className="gradient-text">Open Source</span>
           </h2>
           {isFallback && (
-            <span className="font-mono text-[10px] bg-[#F7931A]/10 text-[#F7931A] border border-[#F7931A]/20 px-2 py-0.5 rounded-full uppercase tracking-wider">
+            <span className="font-mono text-[10px] bg-[#00D4FF]/10 text-[#00D4FF] border border-[#00D4FF]/20 px-2 py-0.5 rounded-full uppercase tracking-wider">
               Demo
             </span>
           )}
@@ -192,10 +191,10 @@ export default function GitHubActivity() {
         {/* Card 1: Repositories */}
         <div className="crypto-card p-6">
           <div className="flex justify-between items-center mb-3">
-            <span className="font-mono text-xs text-[#94A3B8] tracking-wider uppercase">Repos</span>
-            <BookOpen className="h-4 w-4 text-[#F7931A]" />
+            <span className="font-mono text-xs text-[#5B7A91] tracking-wider uppercase">Repos</span>
+            <BookOpen className="h-4 w-4 text-[#00D4FF]" />
           </div>
-          <div className="font-mono text-3xl font-bold text-[#F7931A]">
+          <div className="font-mono text-3xl font-bold text-[#00D4FF]">
             {userData?.public_repos}
           </div>
         </div>
@@ -203,10 +202,10 @@ export default function GitHubActivity() {
         {/* Card 2: Total Stars */}
         <div className="crypto-card p-6">
           <div className="flex justify-between items-center mb-3">
-            <span className="font-mono text-xs text-[#94A3B8] tracking-wider uppercase">Stars</span>
-            <Star className="h-4 w-4 text-[#FFD600] fill-[#FFD600]/20" />
+            <span className="font-mono text-xs text-[#5B7A91] tracking-wider uppercase">Stars</span>
+            <Star className="h-4 w-4 text-[#7B2FFF] fill-[#7B2FFF]/20" />
           </div>
-          <div className="font-mono text-3xl font-bold text-[#FFD600]">
+          <div className="font-mono text-3xl font-bold text-[#7B2FFF]">
             {totalStars}
           </div>
         </div>
@@ -214,10 +213,10 @@ export default function GitHubActivity() {
         {/* Card 3: Followers */}
         <div className="crypto-card p-6">
           <div className="flex justify-between items-center mb-3">
-            <span className="font-mono text-xs text-[#94A3B8] tracking-wider uppercase">Followers</span>
-            <Users className="h-4 w-4 text-[#F7931A]" />
+            <span className="font-mono text-xs text-[#5B7A91] tracking-wider uppercase">Followers</span>
+            <Users className="h-4 w-4 text-[#00D4FF]" />
           </div>
-          <div className="font-mono text-3xl font-bold text-[#F7931A]">
+          <div className="font-mono text-3xl font-bold text-[#00D4FF]">
             {userData?.followers}
           </div>
         </div>
@@ -225,10 +224,10 @@ export default function GitHubActivity() {
         {/* Card 4: Following */}
         <div className="crypto-card p-6">
           <div className="flex justify-between items-center mb-3">
-            <span className="font-mono text-xs text-[#94A3B8] tracking-wider uppercase">Following</span>
-            <Users className="h-4 w-4 text-[#F7931A]" />
+            <span className="font-mono text-xs text-[#5B7A91] tracking-wider uppercase">Following</span>
+            <Users className="h-4 w-4 text-[#00D4FF]" />
           </div>
-          <div className="font-mono text-3xl font-bold text-[#F7931A]">
+          <div className="font-mono text-3xl font-bold text-[#00D4FF]">
             {userData?.following}
           </div>
         </div>
@@ -236,16 +235,16 @@ export default function GitHubActivity() {
 
       {/* Contribution Calendar */}
       <div className="crypto-card p-6">
-        <h3 className="font-heading font-semibold text-lg mb-4 flex items-center gap-2">
+        <h3 className="font-heading font-semibold text-lg mb-4 text-[#E2F4FF] flex items-center gap-2">
           Contribution Calendar
         </h3>
 
         {/* Graph Wrap */}
         <div className="overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
           <div className="min-w-[720px] relative">
-            {/* Contribution calendar via ghchart — orange hue */}
+            {/* Contribution calendar via ghchart — cyan hue */}
             <img
-              src={`https://ghchart.rshah.org/F7931A/${USERNAME}`}
+              src={`https://ghchart.rshah.org/00D4FF/${USERNAME}`}
               alt={`${USERNAME}'s GitHub Contribution Chart`}
               className="w-full h-auto select-none"
               style={{
@@ -254,14 +253,14 @@ export default function GitHubActivity() {
             />
           </div>
         </div>
-        <p className="font-mono text-xs text-[#94A3B8] mt-3 tracking-wide">
+        <p className="font-mono text-xs text-[#5B7A91] mt-3 tracking-wide">
           Daily contribution frequency mapped over the past year.
         </p>
       </div>
 
       {/* Recent Repos */}
       <div>
-        <h3 className="font-heading font-bold text-xl mb-6">Recent Repositories</h3>
+        <h3 className="font-heading font-bold text-xl mb-6 text-[#E2F4FF]">Recent Repositories</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {repos.map((repo) => (
             <a
@@ -273,17 +272,17 @@ export default function GitHubActivity() {
             >
               <div>
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-heading text-base font-bold group-hover:text-[#F7931A] transition-colors flex items-center gap-1.5 truncate">
+                  <h4 className="font-heading text-base font-bold text-[#E2F4FF] group-hover:text-[#00D4FF] transition-colors flex items-center gap-1.5 truncate">
                     {repo.name}
                   </h4>
-                  <ArrowUpRight className="h-4 w-4 text-[#94A3B8] group-hover:text-[#F7931A] transition-colors flex-shrink-0" />
+                  <ArrowUpRight className="h-4 w-4 text-[#5B7A91] group-hover:text-[#00D4FF] transition-colors flex-shrink-0" />
                 </div>
-                <p className="text-sm text-muted mb-4 line-clamp-2">
+                <p className="text-sm text-[#5B7A91] mb-4 line-clamp-2">
                   {repo.description || "No description provided."}
                 </p>
               </div>
 
-              <div className="flex items-center justify-between text-xs text-muted pt-2 border-t border-white/5">
+              <div className="flex items-center justify-between text-xs text-[#5B7A91] pt-2 border-t border-[#00D4FF]/5">
                 {repo.language && (
                   <div className="flex items-center gap-1.5">
                     <span
@@ -294,10 +293,10 @@ export default function GitHubActivity() {
                     <span>{repo.language}</span>
                   </div>
                 )}
-                
+
                 <div className="flex gap-4">
                   <span className="flex items-center gap-1">
-                    <Star className="h-3.5 w-3.5 fill-yellow-400/20 text-yellow-400" />
+                    <Star className="h-3.5 w-3.5 fill-[#7B2FFF]/20 text-[#7B2FFF]" />
                     {repo.stargazers_count}
                   </span>
                   <span className="flex items-center gap-1">

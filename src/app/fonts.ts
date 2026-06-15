@@ -1,4 +1,4 @@
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, Syne, JetBrains_Mono } from "next/font/google";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -6,10 +6,10 @@ export const inter = Inter({
   display: "swap",
 });
 
-export const spaceGrotesk = Space_Grotesk({
+export const syne = Syne({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 

@@ -9,17 +9,25 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#030304] mt-24">
+    <footer className="border-t border-[#00D4FF]/10 bg-[#020B18] mt-24">
       <div className="container-custom py-12">
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
 
           {/* Brand */}
           <div>
-            <h3 className="font-heading font-bold text-xl gradient-text">
+            <h3
+              className="font-heading font-bold text-xl"
+              style={{
+                background: "linear-gradient(135deg, #00D4FF, #7B2FFF)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
               Parth Bhirwandekar
             </h3>
-            <p className="font-mono text-xs text-[#94A3B8] tracking-widest mt-2 uppercase">
+            <p className="font-mono text-xs text-[#5B7A91] tracking-widest mt-2 uppercase">
               Computer Vision • Robotics • AI Systems
             </p>
           </div>
@@ -33,7 +41,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="p-2.5 rounded-xl border border-white/10 text-[#94A3B8] hover:text-[#F7931A] hover:border-[#F7931A]/40 hover:shadow-[0_0_15px_-5px_rgba(247,147,26,0.4)] transition-all duration-300"
+                className="p-2.5 rounded-xl border border-[#00D4FF]/10 text-[#5B7A91] hover:text-[#00D4FF] hover:border-[#00D4FF]/40 hover:shadow-[0_0_15px_-5px_rgba(0,212,255,0.4)] transition-all duration-300"
               >
                 <Icon size={18} />
               </a>
@@ -41,7 +49,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="font-mono text-xs text-[#94A3B8]/60 tracking-wide">
+          <p className="font-mono text-xs text-[#5B7A91]/60 tracking-wide">
             © 2026 Parth Bhirwandekar
           </p>
 

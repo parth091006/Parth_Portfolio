@@ -8,7 +8,7 @@ import Footer from "@/components/layout/Footer";
 
 import { Analytics } from "@vercel/analytics/react";
 
-import { inter, spaceGrotesk, jetbrainsMono } from "./fonts";
+import { inter, syne, jetbrainsMono } from "./fonts";
 import { PersonJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = siteMetadata;
@@ -25,10 +25,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+        className={`${inter.variable} ${syne.variable} ${jetbrainsMono.variable}`}
         style={{ fontFamily: "var(--font-body)" }}
       >
-        <div className="min-h-screen flex flex-col bg-[#030304]">
+        <div className="min-h-screen flex flex-col bg-[#020B18]">
 
           <Navbar />
 

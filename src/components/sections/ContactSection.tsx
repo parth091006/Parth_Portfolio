@@ -30,16 +30,21 @@ const contacts = [
 
 export default function ContactSection() {
   return (
-    <section className="bg-[#030304] py-24">
+    <section
+      className="py-24"
+      style={{
+        background: "radial-gradient(ellipse at center, #0D1B2E 0%, #020B18 100%)",
+      }}
+    >
       <div className="container-custom">
 
         {/* Section header */}
-        <p className="section-label mb-3">// CONTACT</p>
+        <p className="section-label-bracket mb-3">06 / CONTACT</p>
         <h2 className="section-title font-heading mb-4">
           Let&apos;s{" "}
           <span className="gradient-text">Connect</span>
         </h2>
-        <p className="text-[#94A3B8] font-body text-lg mb-14 max-w-xl">
+        <p className="text-[#5B7A91] font-body text-lg mb-14 max-w-xl">
           I&apos;m open to research collaborations, internship opportunities,
           and interesting project discussions.
         </p>
@@ -52,12 +57,12 @@ export default function ContactSection() {
               className="group crypto-card p-6 flex flex-col gap-4"
             >
               {/* Icon container */}
-              <div className="w-11 h-11 rounded-xl border border-[#EA580C]/40 bg-[#EA580C]/10 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(234,88,12,0.3)] transition-all duration-300">
-                <Icon size={20} className="text-[#F7931A]" />
+              <div className="w-11 h-11 rounded-xl border border-[#00D4FF]/40 bg-[#00D4FF]/10 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all duration-300">
+                <Icon size={20} className="text-[#00D4FF]" />
               </div>
 
               <div>
-                <p className="font-mono text-xs text-[#94A3B8] tracking-widest uppercase mb-1.5">
+                <p className="font-mono text-xs text-[#5B7A91] tracking-widest uppercase mb-1.5">
                   {label}
                 </p>
                 {href ? (
@@ -65,13 +70,13 @@ export default function ContactSection() {
                     href={href}
                     target={href.startsWith("mailto") ? undefined : "_blank"}
                     rel="noopener noreferrer"
-                    className="font-body text-base font-medium text-white hover:text-[#F7931A] transition-colors duration-200 break-all group/link flex items-center gap-1"
+                    className="font-body text-base font-medium text-[#E2F4FF] hover:text-[#00D4FF] transition-colors duration-200 break-all group/link flex items-center gap-1"
                   >
                     {value}
                     <ArrowUpRight size={14} className="opacity-0 group-hover/link:opacity-100 -translate-x-2 translate-y-2 group-hover/link:translate-x-0 group-hover/link:-translate-y-0 transition-all duration-300" />
                   </a>
                 ) : (
-                  <p className="font-body text-base font-medium text-white">{value}</p>
+                  <p className="font-body text-base font-medium text-[#E2F4FF]">{value}</p>
                 )}
               </div>
             </div>

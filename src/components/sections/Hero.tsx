@@ -6,25 +6,25 @@ import { Github, Linkedin, ArrowRight, FileText } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-[92vh] flex items-center bg-[#030304]">
+    <section className="relative overflow-hidden min-h-[92vh] flex items-center bg-[#020B18]">
 
       {/* Grid pattern background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
 
-      {/* Ambient orange glow — left */}
+      {/* Ambient cyan glow — left */}
       <div
         className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(234,88,12,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
 
-      {/* Ambient gold glow — right */}
+      {/* Ambient violet glow — right */}
       <div
         className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(255,214,0,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(123,47,255,0.08) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -44,26 +44,34 @@ export default function Hero() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#F7931A]/30 bg-[#F7931A]/5 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/5 mb-8"
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping-custom absolute inline-flex h-full w-full rounded-full bg-[#F7931A] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F7931A]" />
+                <span className="animate-ping-custom absolute inline-flex h-full w-full rounded-full bg-[#00D4FF] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00D4FF]" />
               </span>
-              <span className="font-mono text-xs text-[#F7931A] tracking-widest uppercase">
+              <span className="font-mono text-xs text-[#00D4FF] tracking-widest uppercase">
                 AIML Student • Mumbai, India
               </span>
             </motion.div>
 
             {/* Main headline */}
             <h1 className="font-heading font-bold leading-tight">
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E2F4FF]">
                 Building
               </span>
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E2F4FF]">
                 Intelligent
               </span>
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl gradient-text">
+              <span
+                className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                style={{
+                  background: "linear-gradient(135deg, #00D4FF, #7B2FFF)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Systems
               </span>
             </h1>
@@ -73,7 +81,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="font-mono text-sm md:text-base tracking-[0.2em] text-[#94A3B8] mt-6 uppercase"
+              className="font-mono text-sm md:text-base tracking-[0.2em] text-[#5B7A91] mt-6 uppercase"
             >
               AI &nbsp;•&nbsp; Computer Vision &nbsp;•&nbsp; Robotics
             </motion.p>
@@ -83,7 +91,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="mt-8 text-base md:text-lg max-w-xl text-[#94A3B8] leading-relaxed font-body"
+              className="mt-8 text-base md:text-lg max-w-xl text-[#5B7A91] leading-relaxed font-body"
             >
               AIML student passionate about Computer Vision, Robotics, AI Systems,
               Drones and Research. Building intelligent solutions that bridge
@@ -125,7 +133,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="p-2.5 rounded-xl border border-white/10 text-[#94A3B8] hover:text-[#F7931A] hover:border-[#F7931A]/40 hover:shadow-[0_0_15px_-5px_rgba(247,147,26,0.4)] transition-all duration-300"
+                className="p-2.5 rounded-xl border border-[#00D4FF]/10 text-[#5B7A91] hover:text-[#00D4FF] hover:border-[#00D4FF]/40 hover:shadow-[0_0_15px_-5px_rgba(0,212,255,0.4)] transition-all duration-300"
               >
                 <Github size={20} />
               </a>
@@ -134,18 +142,18 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="p-2.5 rounded-xl border border-white/10 text-[#94A3B8] hover:text-[#F7931A] hover:border-[#F7931A]/40 hover:shadow-[0_0_15px_-5px_rgba(247,147,26,0.4)] transition-all duration-300"
+                className="p-2.5 rounded-xl border border-[#00D4FF]/10 text-[#5B7A91] hover:text-[#00D4FF] hover:border-[#00D4FF]/40 hover:shadow-[0_0_15px_-5px_rgba(0,212,255,0.4)] transition-all duration-300"
               >
                 <Linkedin size={20} />
               </a>
-              <span className="font-mono text-xs text-[#94A3B8]/60 tracking-widest ml-2">
+              <span className="font-mono text-xs text-[#5B7A91]/60 tracking-widest ml-2">
                 @parth091006
               </span>
             </motion.div>
 
           </motion.div>
 
-          {/* ── Right Column — Orbital Photo ── */}
+          {/* ── Right Column — Glowing Ring Photo ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -154,42 +162,60 @@ export default function Hero() {
           >
             <div className="relative flex items-center justify-center w-[300px] h-[300px] md:w-[420px] md:h-[420px]">
 
-              {/* Outer spinning orbital ring */}
+              {/* Outer glowing ring */}
               <div
-                className="animate-spin-slow absolute inset-0 rounded-full"
+                className="absolute inset-0 rounded-full"
                 style={{
-                  border: "1px solid transparent",
-                  background: "linear-gradient(#030304, #030304) padding-box, linear-gradient(to right, #EA580C, transparent, #F7931A) border-box",
+                  border: "2px solid rgba(0, 212, 255, 0.3)",
+                  boxShadow: "0 0 40px rgba(0, 212, 255, 0.5)",
                 }}
               />
 
-              {/* Inner spinning orbital ring (reverse) */}
+              {/* Inner subtle ring */}
               <div
-                className="animate-spin-slow-reverse absolute inset-[24px] rounded-full"
+                className="absolute inset-[20px] rounded-full"
                 style={{
-                  border: "1px solid transparent",
-                  background: "linear-gradient(#030304, #030304) padding-box, linear-gradient(to bottom, #FFD600, transparent, #F7931A) border-box",
+                  border: "1px solid rgba(123, 47, 255, 0.15)",
                 }}
               />
 
-              {/* Third decorative ring */}
+              {/* Orbiting dot 1 */}
               <div
-                className="absolute inset-[48px] rounded-full"
+                className="absolute w-3 h-3 rounded-full animate-orbit-dot"
                 style={{
-                  border: "1px solid rgba(247, 147, 26, 0.15)",
+                  background: "#00D4FF",
+                  boxShadow: "0 0 10px rgba(0, 212, 255, 0.8)",
+                }}
+              />
+
+              {/* Orbiting dot 2 */}
+              <div
+                className="absolute w-2.5 h-2.5 rounded-full animate-orbit-dot-2"
+                style={{
+                  background: "#7B2FFF",
+                  boxShadow: "0 0 10px rgba(123, 47, 255, 0.8)",
+                }}
+              />
+
+              {/* Orbiting dot 3 */}
+              <div
+                className="absolute w-2 h-2 rounded-full animate-orbit-dot-3"
+                style={{
+                  background: "#00D4FF",
+                  boxShadow: "0 0 8px rgba(0, 212, 255, 0.6)",
                 }}
               />
 
               {/* Profile photo */}
-              <div className="absolute inset-[64px] rounded-full overflow-hidden shadow-[0_0_60px_rgba(247,147,26,0.3)]">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#EA580C]/20 to-[#FFD600]/10 z-10" />
+              <div className="absolute inset-[60px] md:inset-[80px] rounded-full overflow-hidden shadow-[0_0_60px_rgba(0,212,255,0.3)]">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00D4FF]/20 to-[#7B2FFF]/10 z-10" />
                 <Image
                   src="/profile/profile-photo.jpg"
                   alt="Parth Bhirwandekar — AIML Student"
                   fill
                   priority
                   className="object-cover rounded-full"
-                  sizes="(max-width: 768px) 172px, 252px"
+                  sizes="(max-width: 768px) 180px, 260px"
                 />
               </div>
 
@@ -199,8 +225,8 @@ export default function Hero() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-4 -right-4 md:top-4 md:-right-8 glass-card px-3 py-2 z-20"
               >
-                <p className="font-mono text-[10px] text-[#94A3B8] tracking-wider">Research</p>
-                <p className="font-heading font-bold text-[#F7931A] text-base">Published</p>
+                <p className="font-mono text-[10px] text-[#5B7A91] tracking-wider">Research</p>
+                <p className="font-heading font-bold text-[#00D4FF] text-base">Published</p>
               </motion.div>
 
               {/* Floating stat — bottom left */}
@@ -209,8 +235,8 @@ export default function Hero() {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                 className="absolute -bottom-4 -left-4 md:bottom-4 md:-left-8 glass-card px-3 py-2 z-20"
               >
-                <p className="font-mono text-[10px] text-[#94A3B8] tracking-wider">Graduation</p>
-                <p className="font-heading font-bold text-[#FFD600] text-base">2028</p>
+                <p className="font-mono text-[10px] text-[#5B7A91] tracking-wider">Graduation</p>
+                <p className="font-heading font-bold text-[#7B2FFF] text-base">2028</p>
               </motion.div>
 
             </div>
@@ -226,8 +252,8 @@ export default function Hero() {
           className="flex justify-center mt-16 md:mt-24"
         >
           <div className="flex flex-col items-center gap-2">
-            <span className="font-mono text-[10px] tracking-widest text-[#94A3B8]/50 uppercase">Scroll</span>
-            <div className="w-px h-12 bg-gradient-to-b from-[#F7931A]/50 to-transparent" />
+            <span className="font-mono text-[10px] tracking-widest text-[#5B7A91]/50 uppercase">Scroll</span>
+            <div className="w-px h-12 bg-gradient-to-b from-[#00D4FF]/50 to-transparent" />
           </div>
         </motion.div>
 
