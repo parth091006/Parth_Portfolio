@@ -2,7 +2,7 @@
 
 A modern, high-performance portfolio website built to showcase my work in Artificial Intelligence, Machine Learning, Computer Vision, Robotics, and Research. 
 
-The website is designed with a custom **"Bitcoin DeFi"** aesthetic, featuring a dark void background (`#030304`), Bitcoin orange accents (`#F7931A`), digital gold gradients, and a monospace-heavy typography system for a highly technical, premium feel.
+The website is designed with a custom **"Neural Cyan / Deep Space"** aesthetic, featuring a dark navy background (`#020B18`), electric cyan accents (`#00D4FF`), deep violet gradients, and a monospace-heavy typography system (Syne, JetBrains Mono) for a highly technical, computer-vision HUD feel.
 
 ---
 

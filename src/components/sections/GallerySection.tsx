@@ -1,21 +1,24 @@
 export default function GallerySection() {
   return (
-    <section className="container-custom py-24">
+    <section className="bg-[#0D1B2E] py-24">
+      <div className="container-custom">
 
-      <h1 className="text-5xl font-bold mb-12">
-        Gallery
-      </h1>
+        <p className="section-label-bracket mb-3">// GALLERY</p>
+        <h1 className="section-title font-heading mb-12">
+          <span className="gradient-text">Gallery</span>
+        </h1>
 
-      <div className="glass-card p-8">
+        <div className="glass-card p-8">
 
-        <p className="text-muted">
-          Project images, robotics builds,
-          research activities and portfolio
-          highlights will be displayed here.
-        </p>
+          <p className="text-[#5B7A91]">
+            Project images, robotics builds,
+            research activities and portfolio
+            highlights will be displayed here.
+          </p>
+
+        </div>
 
       </div>
-
     </section>
   );
 }

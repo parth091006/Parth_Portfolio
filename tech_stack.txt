@@ -10,7 +10,8 @@
 
 [2] STYLING & DESIGN SYSTEM
     ├── Tailwind CSS 4.x       (Utility-first CSS Framework for rapid UI)
-    ├── CSS Variables          (Custom "Bitcoin DeFi" Design System tokens)
+    ├── CSS Variables          (Custom "Neural Cyan / Deep Space" Design System tokens)
+    ├── Google Fonts           (Syne for headings, JetBrains Mono for monospace)
     ├── Framer Motion 12.18.1  (Complex React animations and transitions)
     ├── Lucide React 0.511.0   (Primary SVG Iconography)
     └── React Icons 5.5.0      (Supplementary Icon Sets)

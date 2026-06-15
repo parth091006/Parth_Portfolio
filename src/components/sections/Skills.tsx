@@ -1,6 +1,6 @@
 import SkillCard from "@/components/cards/SkillCard";
 import { skills } from "@/data/skills";
-import { Brain, Eye, Cpu, Code2 } from "lucide-react";
+import { Brain, Eye, Cpu, Code as Code2 } from "lucide-react";
 
 const skillGroups = [
   {
@@ -27,11 +27,11 @@ const skillGroups = [
 
 export default function SkillsSection() {
   return (
-    <section className="bg-[#030304] py-24">
+    <section className="bg-[#020B18] py-24">
       <div className="container-custom">
 
         {/* Section header */}
-        <p className="section-label mb-3">// SKILLS</p>
+        <p className="section-label-bracket mb-3">02 / SKILLS</p>
         <h2 className="section-title font-heading mb-14">
           Skills &amp;{" "}
           <span className="gradient-text">Technologies</span>

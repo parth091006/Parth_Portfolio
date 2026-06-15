@@ -18,6 +18,7 @@ parth-portfolio/
 │   ├── app/                                    # Contains all pages and routes of the portfolio using Next.js App Router.
 │   │   ├── page.tsx                            # The homepage of the portfolio.
 │   │   ├── layout.tsx                          # Defines the common layout for all pages (e.g., header, footer).
+│   │   ├── fonts.ts                            # Google Fonts configurations (Syne, Inter, JetBrains Mono).
 │   │   ├── loading.tsx                         # Loading state component displayed during page transitions.
 │   │   ├── not-found.tsx                       # Custom 404 page for handling non-existent routes.
 │   │   │

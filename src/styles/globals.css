@@ -1,23 +1,28 @@
 @import "tailwindcss";
 
 /* ============================================================
-   BITCOIN DEFI DESIGN SYSTEM — PARTH BHIRWANDEKAR PORTFOLIO
+   NEURAL CYAN / DEEP SPACE DESIGN SYSTEM
    ============================================================ */
 
 /* --- Design Tokens --- */
 :root {
-  --void: #030304;
-  --surface: #0F1115;
-  --foreground: #FFFFFF;
-  --muted: #94A3B8;
-  --border: #1E293B;
+  /* Background colors */
+  --void: #020B18;
+  --surface: #0D1B2E;
+  --surface-elevated: #102034;
 
-  --bitcoin-orange: #F7931A;
-  --burnt-orange: #EA580C;
-  --digital-gold: #FFD600;
+  /* Text colors */
+  --foreground: #E2F4FF;
+  --muted: #5B7A91;
+  --border: rgba(0, 212, 255, 0.12);
+
+  /* Accent colors */
+  --cyan: #00D4FF;
+  --violet: #7B2FFF;
+  --success-green: #39FF14;
 
   /* Font families */
-  --font-heading: var(--font-heading, "Space Grotesk", sans-serif);
+  --font-heading: var(--font-heading, "Syne", sans-serif);
   --font-body: var(--font-body, "Inter", sans-serif);
   --font-mono: var(--font-mono, "JetBrains Mono", monospace);
 }
@@ -65,7 +70,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #F7931A, #FFD600);
+  background: linear-gradient(135deg, #00D4FF, #7B2FFF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -76,7 +81,23 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--bitcoin-orange);
+  color: var(--cyan);
+}
+
+/* Updated bracket style section label */
+.section-label-bracket {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+}
+
+.section-label-bracket::before {
+  content: "[ ";
+}
+
+.section-label-bracket::after {
+  content: " ]";
 }
 
 .section-title {
@@ -99,8 +120,8 @@ body {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: white;
-  background: linear-gradient(to right, #EA580C, #F7931A);
-  box-shadow: 0 0 20px -5px rgba(234, 88, 12, 0.5);
+  background: linear-gradient(135deg, #00D4FF 0%, #7B2FFF 100%);
+  box-shadow: 0 0 20px -5px rgba(0, 212, 255, 0.5);
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
@@ -110,7 +131,7 @@ body {
 
 .btn-primary:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px -5px rgba(247, 147, 26, 0.7);
+  box-shadow: 0 0 30px -5px rgba(0, 212, 255, 0.7);
 }
 
 .btn-secondary {
@@ -125,7 +146,7 @@ body {
   letter-spacing: 0.05em;
   color: white;
   background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(0, 212, 255, 0.3);
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
@@ -133,72 +154,66 @@ body {
 }
 
 .btn-secondary:hover {
-  border-color: rgba(247, 147, 26, 0.6);
-  background: rgba(247, 147, 26, 0.08);
-  color: #F7931A;
+  border-color: #00D4FF;
+  background: rgba(0, 212, 255, 0.08);
+  color: #00D4FF;
 }
 
 /* --- Cards --- */
 .glass-card {
-  background: rgba(15, 17, 21, 0.8);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(13, 27, 46, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.12);
   border-radius: 1rem;
 }
 
 .crypto-card {
   background: var(--surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.08);
   border-radius: 1rem;
   transition: all 0.3s ease;
 }
 
 .crypto-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(247, 147, 26, 0.4);
-  box-shadow: 0 0 30px -10px rgba(247, 147, 26, 0.25);
+  transform: translateY(-4px);
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 0 30px -10px rgba(0, 212, 255, 0.2);
 }
 
 /* --- Glow Effects --- */
 .shadow-glow {
-  box-shadow: 0 0 50px rgba(247, 147, 26, 0.35);
+  box-shadow: 0 0 50px rgba(0, 212, 255, 0.35);
 }
 
-.glow-orange {
-  box-shadow: 0 0 20px -5px rgba(234, 88, 12, 0.5);
+.glow-cyan {
+  box-shadow: 0 0 20px -5px rgba(0, 212, 255, 0.5);
 }
 
 /* --- Grid Pattern Background --- */
 .bg-grid-pattern {
   background-size: 50px 50px;
   background-image:
-    linear-gradient(to right, rgba(30, 41, 59, 0.5) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(30, 41, 59, 0.5) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 212, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 212, 255, 0.08) 1px, transparent 1px);
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
 }
 
 /* --- Animations --- */
 @keyframes float {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-16px);
   }
 }
 
 @keyframes float-delayed {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-12px);
   }
@@ -208,7 +223,6 @@ body {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
@@ -218,32 +232,53 @@ body {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(-360deg);
   }
 }
 
 @keyframes pulse-glow {
-
-  0%,
-  100% {
+  0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 8px rgba(247, 147, 26, 0.6);
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
   }
-
   50% {
     opacity: 0.7;
-    box-shadow: 0 0 20px rgba(247, 147, 26, 1);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 1);
   }
 }
 
 @keyframes ping-custom {
-
-  75%,
-  100% {
+  75%, 100% {
     transform: scale(2);
     opacity: 0;
+  }
+}
+
+@keyframes orbit-dot {
+  0% {
+    transform: rotate(0deg) translateX(140px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(140px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-dot-2 {
+  0% {
+    transform: rotate(120deg) translateX(140px) rotate(-120deg);
+  }
+  100% {
+    transform: rotate(480deg) translateX(140px) rotate(-480deg);
+  }
+}
+
+@keyframes orbit-dot-3 {
+  0% {
+    transform: rotate(240deg) translateX(140px) rotate(-240deg);
+  }
+  100% {
+    transform: rotate(600deg) translateX(140px) rotate(-600deg);
   }
 }
 
@@ -271,15 +306,27 @@ body {
   animation: ping-custom 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
+.animate-orbit-dot {
+  animation: orbit-dot 8s linear infinite;
+}
+
+.animate-orbit-dot-2 {
+  animation: orbit-dot-2 8s linear infinite;
+}
+
+.animate-orbit-dot-3 {
+  animation: orbit-dot-3 8s linear infinite;
+}
+
 /* --- Focus States --- */
 *:focus-visible {
-  outline: 2px solid #F7931A;
+  outline: 2px solid #00D4FF;
   outline-offset: 2px;
 }
 
 /* --- Selection --- */
 ::selection {
-  background: rgba(247, 147, 26, 0.25);
+  background: rgba(0, 212, 255, 0.25);
   color: white;
 }
 
@@ -293,10 +340,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(247, 147, 26, 0.3);
+  background: rgba(0, 212, 255, 0.3);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(247, 147, 26, 0.6);
+  background: rgba(0, 212, 255, 0.6);
 }
