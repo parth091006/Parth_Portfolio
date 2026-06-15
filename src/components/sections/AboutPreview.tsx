@@ -17,22 +17,21 @@ export default function AboutPreview() {
 
             <div className="space-y-5 text-[#94A3B8] leading-relaxed font-body text-base md:text-lg">
               <p>
-                I&apos;m a BTech student in{" "}
+                I&apos;m a B.Tech student in{" "}
                 <span className="text-white font-medium">
-                  Artificial Intelligence and Machine Learning
+                  Artificial Intelligence & Machine Learning
                 </span>{" "}
-                at Vijaybhoomi University. My interests span Computer Vision,
-                Robotics, Drones, Embedded Systems and Research.
+                at Vijaybhoomi University, with a Minor in{" "}
+                <span className="text-white font-medium">
+                  Sound Engineering
+                </span>{" "}
+                from the True School of Music.
               </p>
               <p>
-                Beyond academics, I enjoy exploring emerging technologies,
-                working on robotics systems, contributing to research, and
-                building intelligent solutions that solve real-world problems.
+                Currently interning at AiGENThix, I build computer vision systems for real-world object detection and tracking. My core interests lie in autonomous systems, drone technology, and edge AI deployment.
               </p>
               <p>
-                My long-term goal is to pursue higher education, conduct
-                impactful research, and eventually build technology-driven
-                products and companies.
+                I am actively looking for opportunities in Computer Vision, Deep Learning, Robotics, IoT and Research. Building at the intersection of AI and physical systems? Let&apos;s talk.
               </p>
             </div>
 
@@ -45,10 +44,10 @@ export default function AboutPreview() {
           {/* Right — Stats panel */}
           <div className="grid grid-cols-2 gap-4">
             {[
-              { label: "University", value: "Vijaybhoomi", sub: "AIML Batch 2028" },
+              { label: "Education", value: "B.Tech AIML", sub: "Vijaybhoomi '28" },
+              { label: "Minor", value: "Sound Engineering", sub: "True School of Music" },
+              { label: "Internship", value: "AiGENThix", sub: "Computer Vision & Robotics" },
               { label: "Location", value: "Mumbai", sub: "India" },
-              { label: "Internship", value: "AIGenThix", sub: "Mechatronics & IoT" },
-              { label: "Research", value: "1 Paper", sub: "Accepted 2026" },
             ].map((item) => (
               <div
                 key={item.label}
@@ -60,7 +59,7 @@ export default function AboutPreview() {
                 <p className="font-heading font-semibold text-white text-lg group-hover:text-[#F7931A] transition-colors duration-200">
                   {item.value}
                 </p>
-                <p className="font-mono text-xs text-[#94A3B8]/60 mt-0.5">
+                <p className="font-mono text-sm text-[#94A3B8]/80 mt-1">
                   {item.sub}
                 </p>
               </div>

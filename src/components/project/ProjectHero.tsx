@@ -1,4 +1,4 @@
-import TechStack from "./TechStack";
+import TechStack from "./ProjectTechStack";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 

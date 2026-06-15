@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/projects", label: "Projects" },
   { href: "/research", label: "Research" },
-  { href: "/certificates", label: "Certs" },
+  { href: "/certificates", label: "Certificates" },
   { href: "/blog", label: "Blog" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
@@ -15,6 +16,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 bg-[#030304]/80 backdrop-blur-xl border-b border-white/10">
@@ -31,24 +33,28 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="font-mono text-sm tracking-wider text-[#94A3B8] hover:text-[#F7931A] transition-colors duration-200"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-mono text-sm tracking-wider transition-colors duration-200 ${isActive ? "text-[#F7931A]" : "text-[#94A3B8] hover:text-[#F7931A]"
+                  }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Status Badge */}
-        <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-[#F7931A]/30 bg-[#F7931A]/5">
+        <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-[#22c55e]/30 bg-[#22c55e]/5">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping-custom absolute inline-flex h-full w-full rounded-full bg-[#F7931A] opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F7931A]" />
+            <span className="animate-ping-custom absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22c55e]" />
           </span>
-          <span className="font-mono text-xs text-[#F7931A] tracking-wider">
+          <span className="font-mono text-xs text-[#22c55e] tracking-wider">
             Open to Work
           </span>
         </div>
@@ -68,23 +74,27 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-[#030304]/95 backdrop-blur-xl border-t border-white/10 px-6 py-8">
           <nav className="flex flex-col gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-mono text-sm tracking-wider text-[#94A3B8] hover:text-[#F7931A] transition-colors duration-200"
-                onClick={() => setMobileOpen(false)}
-              >
-                / {link.label.toUpperCase()}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`font-mono text-sm tracking-wider transition-colors duration-200 ${isActive ? "text-[#F7931A]" : "text-[#94A3B8] hover:text-[#F7931A]"
+                    }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  / {link.label.toUpperCase()}
+                </Link>
+              );
+            })}
           </nav>
           <div className="mt-8 flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping-custom absolute inline-flex h-full w-full rounded-full bg-[#F7931A] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F7931A]" />
+              <span className="animate-ping-custom absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22c55e]" />
             </span>
-            <span className="font-mono text-xs text-[#F7931A] tracking-wider">Open to Work</span>
+            <span className="font-mono text-xs text-[#22c55e] tracking-wider">Open to Work</span>
           </div>
         </div>
       )}

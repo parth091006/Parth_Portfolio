@@ -6,37 +6,22 @@ import { Search, X, Award, Calendar, ExternalLink, ShieldCheck } from "lucide-re
 import { certificates, Certificate } from "@/data/certificates";
 import CertificateCard from "@/components/cards/CertificateCard";
 
-const CATEGORIES = [
-  "All",
-  "Artificial Intelligence",
-  "Machine Learning",
-  "Computer Vision",
-  "Robotics",
-  "Programming",
-  "Cloud",
-  "Other",
-];
-
 export default function CertificateSection() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [activeModalCert, setActiveModalCert] = useState<Certificate | null>(null);
 
   // Filter logic
   const filteredCertificates = useMemo(() => {
     return certificates.filter((cert) => {
-      const matchesCategory =
-        selectedCategory === "All" || cert.category === selectedCategory;
-
       const lowerQuery = searchQuery.toLowerCase();
       const matchesSearch =
         cert.title.toLowerCase().includes(lowerQuery) ||
         cert.issuer.toLowerCase().includes(lowerQuery) ||
         cert.skills.some((skill) => skill.toLowerCase().includes(lowerQuery));
 
-      return matchesCategory && matchesSearch;
+      return matchesSearch;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery]);
 
   return (
     <section className="bg-[#030304] py-24 min-h-screen">
@@ -73,21 +58,7 @@ export default function CertificateSection() {
           </div>
         </div>
 
-        {/* Category Tabs */}
-        <div className="flex flex-wrap gap-2 mb-10 overflow-x-auto pb-2 scrollbar-hide">
-          {CATEGORIES.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`font-mono text-xs uppercase tracking-wider px-4 py-2 rounded-xl transition-all duration-200 border whitespace-nowrap cursor-pointer ${selectedCategory === category
-                ? "bg-[#F7931A]/10 border-[#F7931A]/50 text-[#F7931A]"
-                : "bg-[#0F1115] border-white/10 text-[#94A3B8] hover:text-white hover:border-[#F7931A]/30"
-                }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+
 
         {/* Grid */}
         {filteredCertificates.length > 0 ? (
@@ -101,9 +72,7 @@ export default function CertificateSection() {
                 />
               ))}
             </div>
-            <p className="text-center font-mono text-xs text-[#94A3B8] mt-12">
-              More certifications and achievements will be added as they are earned.
-            </p>
+
           </>
         ) : (
           <div className="crypto-card text-center py-20 px-4">

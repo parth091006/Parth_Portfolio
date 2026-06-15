@@ -3,13 +3,13 @@ import { Profile } from "@/types/profile";
 export const profile: Profile = {
   name: "Parth Bhirwandekar",
 
-  title: "Computer Vision • Robotics • AI Systems",
+  title: "Computer Vision & Robotics Engineer",
 
   tagline:
-    "Building intelligent systems through AI, Robotics and Research.",
+    "Building at the intersection of AI and physical systems.",
 
   description:
-    "AIML student passionate about Computer Vision, Robotics, AI Systems, Drones and Research. Currently working on real-world projects involving sports analytics, autonomous robots, and AI-powered applications.",
+    "Second-year B.Tech student in Artificial Intelligence & Machine Learning at Vijaybhoomi University, with a Minor in Sound Engineering from the True School of Music. Currently interning at AiGENThix, building computer vision systems for real-world object detection and tracking. Actively looking for opportunities in Computer Vision, Deep Learning, Robotics, Autonomous Systems, and IoT.",
 
   email:
     "parthbhirwandekar@gmail.com",
