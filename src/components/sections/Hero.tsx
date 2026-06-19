@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Github, Linkedin, ArrowRight, FileText } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -105,10 +106,10 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="flex flex-wrap gap-4 mt-10"
             >
-              <a href="/projects" className="btn-primary">
+              <Link href="/projects" className="btn-primary">
                 View Projects
                 <ArrowRight size={16} />
-              </a>
+              </Link>
 
               <a
                 href="/resume/Parth_Bhirwandekar_Resume.pdf"
@@ -214,7 +215,7 @@ export default function Hero() {
                   alt="Parth Bhirwandekar — AIML Student"
                   fill
                   priority
-                  className="object-cover rounded-full"
+                  className="object-cover object-[25%_top] rounded-full"
                   sizes="(max-width: 768px) 180px, 260px"
                 />
               </div>

@@ -28,7 +28,7 @@ export default function CertificateSection() {
       <div className="container-custom">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
           <div>
-            <p className="section-label-bracket mb-3">// CERTIFICATIONS</p>
+            <p className="section-label-bracket mb-3">{"// CERTIFICATIONS"}</p>
             <h1 className="section-title font-heading mb-3">
               Verified <span className="gradient-text">Qualifications</span>
             </h1>

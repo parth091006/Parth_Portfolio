@@ -5,7 +5,7 @@ export default function AchievementSection() {
     <section className="bg-[#0D1B2E] py-24">
       <div className="container-custom">
 
-        <p className="section-label-bracket mb-3">// ACHIEVEMENTS</p>
+        <p className="section-label-bracket mb-3">{"// ACHIEVEMENTS"}</p>
         <h1 className="section-title font-heading mb-12">
           <span className="gradient-text">Achievements</span>
         </h1>

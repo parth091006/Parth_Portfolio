@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import ProjectCard from "@/components/cards/ProjectCard";
 import { projects } from "@/data/projects";
+import Link from "next/link";
 
 export default function FeaturedProjects() {
   return (
@@ -17,13 +18,13 @@ export default function FeaturedProjects() {
             </h2>
           </div>
 
-          <a
+          <Link
             href="/projects"
             className="inline-flex items-center gap-2 font-mono text-sm text-[#00D4FF] hover:text-[#7B2FFF] transition-colors duration-200 tracking-wider group"
           >
             All Projects
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
-          </a>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

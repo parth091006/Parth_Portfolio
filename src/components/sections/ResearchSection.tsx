@@ -5,7 +5,7 @@ export default function ResearchSection() {
     <section className="bg-[#0D1B2E] py-24">
       <div className="container-custom">
 
-        <p className="section-label-bracket mb-3">// RESEARCH</p>
+        <p className="section-label-bracket mb-3">{"// RESEARCH"}</p>
         <h1 className="section-title font-heading mb-12">
           <span className="gradient-text">Research</span>
         </h1>

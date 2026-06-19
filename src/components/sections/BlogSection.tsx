@@ -5,7 +5,7 @@ export default function BlogSection() {
     <section className="bg-[#0D1B2E] py-24">
       <div className="container-custom">
 
-        <p className="section-label-bracket mb-3">// BLOG</p>
+        <p className="section-label-bracket mb-3">{"// BLOG"}</p>
         <h1 className="section-title font-heading mb-12">
           Technical <span className="gradient-text">Writings</span>
         </h1>
