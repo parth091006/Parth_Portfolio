@@ -28,10 +28,7 @@ export default function ProjectCard({
         <span className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-[#00D4FF]/60 rounded-br-2xl" />
 
         {/* Header row */}
-        <div className="flex items-center justify-between mb-5">
-          <span className="font-mono text-[10px] tracking-wider px-3 py-1.5 rounded-full border border-[#00D4FF]/20 text-[#5B7A91] uppercase">
-            {category}
-          </span>
+        <div className="flex items-center justify-end mb-5">
           <div className="flex items-center gap-1.5">
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping-custom absolute inline-flex h-full w-full rounded-full bg-[#00D4FF] opacity-75" />

@@ -37,9 +37,7 @@ export default function ProjectHero({
           Back to Projects
         </Link>
 
-        <span className="font-mono text-xs tracking-widest uppercase text-[#00D4FF] border border-[#00D4FF]/30 bg-[#00D4FF]/5 px-3 py-1.5 rounded-full inline-block">
-          {category}
-        </span>
+
 
         <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-[#E2F4FF] mt-6 mb-6 leading-tight max-w-4xl">
           {title}

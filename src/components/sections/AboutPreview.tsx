@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function AboutPreview() {
   return (
-    <section className="bg-[#0D1B2E] py-24">
+    <section id="about" className="bg-[#0D1B2E] py-24">
       <div className="container-custom">
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -35,10 +35,7 @@ export default function AboutPreview() {
               </p>
             </div>
 
-            <a href="/about" className="inline-flex items-center gap-2 mt-8 btn-primary">
-              More About Me
-              <ArrowRight size={16} />
-            </a>
+
           </div>
 
           {/* Right — Stats panel */}

@@ -67,5 +67,47 @@ export const projects = [
       "Fusion 360",
       "RAG"
     ]
+  },
+  {
+    slug: "parth-portfolio",
+    title: "Parth_Portfolio",
+    shortDescription: "Personal developer portfolio built with Next.js 15.",
+    description: "A modern, responsive personal developer portfolio showcasing projects, skills, and GitHub activity. Built using Next.js 15, React 19, TypeScript, and styled with Tailwind CSS for a sleek, glassmorphic aesthetic.",
+    category: "Web Development",
+    status: "Completed",
+    github: "https://github.com/parth091006/Parth_Portfolio",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    slug: "hackathon-3-project",
+    title: "Hackathon-3_Project",
+    shortDescription: "A hackathon project built with TypeScript.",
+    description: "A collaborative hackathon project built during a recent competition using TypeScript and modern web development practices.",
+    category: "Web Development",
+    status: "Completed",
+    github: "https://github.com/parth091006/Hackathon-3_Project",
+    technologies: [
+      "TypeScript",
+      "Web Development"
+    ]
+  },
+  {
+    slug: "f1-dashboard",
+    title: "F1_Dashboard",
+    shortDescription: "F1 statistics and team analysis dashboard.",
+    description: "An interactive Formula 1 dashboard that provides statistics and analysis on teams and drivers using HTML, CSS, and JavaScript.",
+    category: "Data Visualization",
+    status: "In Progress",
+    github: "https://github.com/parth091006/F1_Dashboard",
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
   }
 ];

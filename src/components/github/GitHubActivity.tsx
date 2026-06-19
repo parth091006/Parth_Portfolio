@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import React, { useState, useEffect } from "react";
 import { Github, Star, Users, BookOpen, ArrowUpRight, GitFork, Loader as Loader2 } from "lucide-react";
@@ -31,6 +32,8 @@ const FALLBACK_USER_DATA: GithubUserData = {
   name: "Parth Bhirwandekar",
 };
 
+const PINNED_REPOS = ["Parth_Portfolio", "Hackathon-3_Project", "F1_Dashboard"];
+
 const FALLBACK_REPOS: GithubRepo[] = [
   {
     id: 1,
@@ -44,32 +47,32 @@ const FALLBACK_REPOS: GithubRepo[] = [
   },
   {
     id: 2,
+    name: "Hackathon-3_Project",
+    description: "A hackathon project built with TypeScript.",
+    html_url: `https://github.com/${USERNAME}/Hackathon-3_Project`,
+    stargazers_count: 3,
+    forks_count: 0,
+    language: "TypeScript",
+    pushed_at: new Date().toISOString(),
+  },
+  {
+    id: 3,
+    name: "F1_Dashboard",
+    description: "F1 statistics dashboard.",
+    html_url: `https://github.com/${USERNAME}/F1_Dashboard`,
+    stargazers_count: 2,
+    forks_count: 0,
+    language: "HTML",
+    pushed_at: new Date().toISOString(),
+  },
+  {
+    id: 4,
     name: "autonomous-delivery-robot",
     description: "ROS2 & Nav2 based autonomous delivery robot simulation and code stack.",
     html_url: `https://github.com/${USERNAME}/autonomous-delivery-robot`,
     stargazers_count: 4,
     forks_count: 2,
     language: "C++",
-    pushed_at: new Date().toISOString(),
-  },
-  {
-    id: 3,
-    name: "computer-vision-projects",
-    description: "Collection of advanced computer vision models, custom YOLO training, and OpenCV pipelines.",
-    html_url: `https://github.com/${USERNAME}/computer-vision-projects`,
-    stargazers_count: 3,
-    forks_count: 0,
-    language: "Python",
-    pushed_at: new Date().toISOString(),
-  },
-  {
-    id: 4,
-    name: "deep-learning-models",
-    description: "Neural network implementations from scratch for CNNs, RNNs, and Transformers.",
-    html_url: `https://github.com/${USERNAME}/deep-learning-models`,
-    stargazers_count: 2,
-    forks_count: 1,
-    language: "Jupyter Notebook",
     pushed_at: new Date().toISOString(),
   },
 ];
@@ -113,13 +116,23 @@ export default function GitHubActivity() {
         // Compute total stars
         const stars = reposJson.reduce((acc, repo) => acc + repo.stargazers_count, 0);
 
-        // Sort repos by pushed date to find recent active ones
-        const sortedRepos = [...reposJson].sort(
+        // Prioritize pinned repos
+        const pinnedRepos = reposJson.filter((repo) =>
+          PINNED_REPOS.includes(repo.name)
+        );
+        
+        // Fill the rest with recently pushed repos if needed
+        const otherRepos = reposJson.filter(
+          (repo) => !PINNED_REPOS.includes(repo.name)
+        );
+        const sortedOtherRepos = [...otherRepos].sort(
           (a, b) => new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
         );
 
+        const finalRepos = [...pinnedRepos, ...sortedOtherRepos].slice(0, 4);
+
         setUserData(userJson);
-        setRepos(sortedRepos.slice(0, 4));
+        setRepos(finalRepos);
         setTotalStars(stars);
         setIsFallback(false);
       } catch (error) {
@@ -152,16 +165,6 @@ export default function GitHubActivity() {
         {/* Calendar skeleton */}
         <div className="glass-card p-6 h-48 flex items-center justify-center">
           <Loader2 className="h-8 w-8 text-[#00D4FF] animate-spin" />
-        </div>
-
-        {/* Recent repos title skeleton */}
-        <div className="h-6 bg-[#00D4FF]/5 rounded-lg w-1/4" />
-
-        {/* Repos grid skeleton */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="glass-card p-6 h-40" />
-          ))}
         </div>
       </div>
     );
@@ -258,57 +261,7 @@ export default function GitHubActivity() {
         </p>
       </div>
 
-      {/* Recent Repos */}
-      <div>
-        <h3 className="font-heading font-bold text-xl mb-6 text-[#E2F4FF]">Recent Repositories</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {repos.map((repo) => (
-            <a
-              key={repo.id}
-              href={repo.html_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="crypto-card p-6 flex flex-col justify-between transition-all duration-300 group"
-            >
-              <div>
-                <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-heading text-base font-bold text-[#E2F4FF] group-hover:text-[#00D4FF] transition-colors flex items-center gap-1.5 truncate">
-                    {repo.name}
-                  </h4>
-                  <ArrowUpRight className="h-4 w-4 text-[#5B7A91] group-hover:text-[#00D4FF] transition-colors flex-shrink-0" />
-                </div>
-                <p className="text-sm text-[#5B7A91] mb-4 line-clamp-2">
-                  {repo.description || "No description provided."}
-                </p>
-              </div>
 
-              <div className="flex items-center justify-between text-xs text-[#5B7A91] pt-2 border-t border-[#00D4FF]/5">
-                {repo.language && (
-                  <div className="flex items-center gap-1.5">
-                    <span
-                      className={`h-2.5 w-2.5 rounded-full ${
-                        LANGUAGE_COLORS[repo.language] || "bg-gray-400"
-                      }`}
-                    />
-                    <span>{repo.language}</span>
-                  </div>
-                )}
-
-                <div className="flex gap-4">
-                  <span className="flex items-center gap-1">
-                    <Star className="h-3.5 w-3.5 fill-[#7B2FFF]/20 text-[#7B2FFF]" />
-                    {repo.stargazers_count}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <GitFork className="h-3.5 w-3.5" />
-                    {repo.forks_count}
-                  </span>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
 
       {/* Button footer */}
       <div className="text-center pt-4">
