@@ -72,3 +72,8 @@ venv/
 # Package managers
 .pnpm-store/
 .yarn/
+
+# Personal Info & Assets
+public/assets/profile_photo/
+public/assets/resume/
+src/data/profile.ts

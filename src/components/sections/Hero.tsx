@@ -112,7 +112,7 @@ export default function Hero() {
               </Link>
 
               <a
-                href="/resume/Parth_Bhirwandekar_Resume.pdf"
+                href="/assets/resume/Parth_Bhirwandekar_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"
@@ -172,52 +172,17 @@ export default function Hero() {
                 }}
               />
 
-              {/* Inner subtle ring */}
-              <div
-                className="absolute inset-[20px] rounded-full"
-                style={{
-                  border: "1px solid rgba(123, 47, 255, 0.15)",
-                }}
-              />
-
-              {/* Orbiting dot 1 */}
-              <div
-                className="absolute w-3 h-3 rounded-full animate-orbit-dot"
-                style={{
-                  background: "#00D4FF",
-                  boxShadow: "0 0 10px rgba(0, 212, 255, 0.8)",
-                }}
-              />
-
-              {/* Orbiting dot 2 */}
-              <div
-                className="absolute w-2.5 h-2.5 rounded-full animate-orbit-dot-2"
-                style={{
-                  background: "#7B2FFF",
-                  boxShadow: "0 0 10px rgba(123, 47, 255, 0.8)",
-                }}
-              />
-
-              {/* Orbiting dot 3 */}
-              <div
-                className="absolute w-2 h-2 rounded-full animate-orbit-dot-3"
-                style={{
-                  background: "#00D4FF",
-                  boxShadow: "0 0 8px rgba(0, 212, 255, 0.6)",
-                }}
-              />
-
               {/* Profile photo */}
-              <div className="absolute inset-[60px] md:inset-[80px] rounded-full overflow-hidden shadow-[0_0_60px_rgba(0,212,255,0.3)]">
+              <div className="absolute inset-[20px] md:inset-[25px] rounded-full overflow-hidden shadow-[0_0_60px_rgba(0,212,255,0.3)]">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00D4FF]/20 to-[#7B2FFF]/10 z-10" />
                 <Image
-                  src="/assets/profile_photo/profile-photo.jpg"
+                  src="/assets/profile_photo/Parth_picture.JPG"
                   alt="Parth Bhirwandekar — AIML Student"
                   fill
                   priority
-                  className="object-cover object-[25%_top] rounded-full"
+                  className="object-cover object-[50%_25%] rounded-full"
                   sizes="(max-width: 768px) 180px, 260px"
-                />
+                />  
               </div>
 
               {/* Floating stat — top right */}
